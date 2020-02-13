@@ -110,6 +110,7 @@
 <script>
     // import HelloWorld from './components/HelloWorld';
     import Footer from "./components/Footer";
+    import WorldMap from "./components/WorldMap";
 
     export default {
         name: 'App',
@@ -117,6 +118,7 @@
         components: {
             // HelloWorld,
             Footer,
+            WorldMap
         },
 
         data: () => ({
