@@ -44,13 +44,13 @@
           <router-link to="/future" class="link">Future</router-link>
         </v-tab>
       </v-tabs>
-      <v-spacer/>
-      <v-switch
-              v-model="$vuetify.theme.dark"
-              primary
-              label="Dark"
-              hide-details
-      />
+<!--      <v-spacer/>-->
+<!--      <v-switch-->
+<!--              v-model="$vuetify.theme.dark"-->
+<!--              primary-->
+<!--              label="Dark"-->
+<!--              hide-details-->
+<!--      />-->
     </v-app-bar>
 
     <v-content>

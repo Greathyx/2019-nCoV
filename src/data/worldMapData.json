@@ -216,7 +216,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-RU"
     },
     {
       "id": "166",
@@ -540,6 +540,32 @@
           {
             "label": "recovered",
             "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "2"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "2"
           }
         ]
       }
