@@ -1,0 +1,548 @@
+{
+  "chart": {
+    "caption": "Current World-wide Infection Situation",
+    "subcaption": "confirmed by 2020.02.19",
+    "includevalueinlabels": "1",
+    "labelsepchar": ": ",
+    "legendposition": "bottom",
+    "entitytooltext": "$lname: <b>$datavalue </b>confirmed",
+    "entityFillHoverColor": "#FFF9C4",
+    "theme": "fusion",
+    "nullEntityColor": "#C2C2D6",
+    "nullEntityAlpha": "50",
+    "hoverOnNull": "0"
+  },
+  "colorrange": {
+    "gradient": "0",
+    "color": [
+      {
+        "minvalue": "1",
+        "maxvalue": "10",
+        "color": "#FF8A65"
+      },
+      {
+        "minvalue": "10",
+        "maxvalue": "50",
+        "color": "#FFAB91"
+      },
+      {
+        "minvalue": "50",
+        "maxvalue": "100",
+        "color": "#D84315"
+      },
+      {
+        "minvalue": "10000",
+        "maxvalue": "100000",
+        "color": "#DD2C00"
+      }
+    ]
+  },
+  "data": [
+    {
+      "id": "101",
+      "FontSize": "16",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "value": "74186",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-CN"
+    },
+    {
+      "id": "119",
+      "value": "81",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-SG"
+    },
+    {
+      "id": "107",
+      "value": "74",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-JP"
+    },
+    {
+      "id": "122",
+      "value": "35",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-TH"
+    },
+    {
+      "id": "110",
+      "value": "31",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AFC"
+    },
+    {
+      "id": "23",
+      "value": "29",
+      "FontSize": "16",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-US"
+    },
+    {
+      "id": "113",
+      "value": "22",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "142",
+      "value": "16",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "125",
+      "value": "16",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "175",
+      "value": "15",
+      "FontSize": "16",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AU"
+    },
+    {
+      "id": "141",
+      "value": "12",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "200",
+      "value": "9",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "170",
+      "value": "9",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "05",
+      "value": "8",
+      "FontSize": "16",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-CA"
+    },
+    {
+      "id": "147",
+      "value": "3",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "117",
+      "value": "3",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "104",
+      "value": "3",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "118",
+      "value": "2",
+      "FontSize": "16",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "166",
+      "value": "2",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "166",
+      "value": "2",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "115",
+      "value": "1",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "100",
+      "value": "1",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "133",
+      "value": "1",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "140",
+      "value": "1",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-FI"
+    },
+    {
+      "id": "167",
+      "value": "1",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-SE"
+    },
+    {
+      "id": "53",
+      "value": "1",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    },
+    {
+      "id": "120",
+      "value": "1",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-AUS"
+    }
+  ],
+  "linkeddata": [
+    {
+      "id": "CN",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "74186"
+          },
+          {
+            "label": "deaths",
+            "value": "2006"
+          },
+          {
+            "label": "recovered",
+            "value": "14926"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SG",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "81"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "29"
+          }
+        ]
+      }
+    },
+    {
+      "id": "JP",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "74"
+          },
+          {
+            "label": "deaths",
+            "value": "1"
+          },
+          {
+            "label": "recovered",
+            "value": "13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "TH",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "35"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "15"
+          }
+        ]
+      }
+    },
+    {
+      "id": "US",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "29"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AU",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "15"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CA",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "8"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SE",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "1"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "FI",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "1"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "1"
+          }
+        ]
+      }
+    }
+  ]
+}
