@@ -86,7 +86,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AFC"
+      "link": "newchart-json-KR"
     },
     {
       "id": "23",
@@ -106,7 +106,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-MY"
     },
     {
       "id": "142",
@@ -116,7 +116,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-DE"
     },
     {
       "id": "125",
@@ -126,7 +126,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-VN"
     },
     {
       "id": "175",
@@ -146,7 +146,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-FR"
     },
     {
       "id": "200",
@@ -156,7 +156,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-AE"
     },
     {
       "id": "170",
@@ -166,7 +166,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-UK"
     },
     {
       "id": "05",
@@ -186,7 +186,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-IT"
     },
     {
       "id": "117",
@@ -196,7 +196,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-PH"
     },
     {
       "id": "104",
@@ -206,7 +206,17 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-IN"
+    },
+    {
+      "id": "106",
+      "value": "3",
+      "FontSize": "12",
+      "FontColor": "#383838",
+      "FontBold": "1",
+      "showLabel": "1",
+      "useSNameInLabels": "1",
+      "link": "newchart-json-IA"
     },
     {
       "id": "118",
@@ -226,17 +236,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
-    },
-    {
-      "id": "166",
-      "value": "2",
-      "FontSize": "12",
-      "FontColor": "#383838",
-      "FontBold": "1",
-      "showLabel": "1",
-      "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-ES"
     },
     {
       "id": "115",
@@ -246,7 +246,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-NP"
     },
     {
       "id": "100",
@@ -256,7 +256,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-KH"
     },
     {
       "id": "133",
@@ -266,7 +266,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-BE"
     },
     {
       "id": "140",
@@ -296,7 +296,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-EG"
     },
     {
       "id": "120",
@@ -306,7 +306,7 @@
       "FontBold": "1",
       "showLabel": "1",
       "useSNameInLabels": "1",
-      "link": "newchart-json-AUS"
+      "link": "newchart-json-LK"
     }
   ],
   "linkeddata": [
@@ -415,6 +415,110 @@
       }
     },
     {
+      "id": "KR",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "82"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "MY",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "22"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "15"
+          }
+        ]
+      }
+    },
+    {
+      "id": "DE",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "16"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "VN",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "16"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "7"
+          }
+        ]
+      }
+    },
+    {
       "id": "US",
       "linkedchart": {
         "chart": {
@@ -467,6 +571,84 @@
       }
     },
     {
+      "id": "FR",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "12"
+          },
+          {
+            "label": "deaths",
+            "value": "1"
+          },
+          {
+            "label": "recovered",
+            "value": "4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AE",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "9"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UK",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "9"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "8"
+          }
+        ]
+      }
+    },
+    {
       "id": "CA",
       "linkedchart": {
         "chart": {
@@ -480,6 +662,266 @@
           {
             "label": "confirmed",
             "value": "8"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "IT",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "3"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PH",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "3"
+          },
+          {
+            "label": "deaths",
+            "value": "1"
+          },
+          {
+            "label": "recovered",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "IN",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "3"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "IA",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "2"
+          },
+          {
+            "label": "deaths",
+            "value": "2"
+          },
+          {
+            "label": "recovered",
+            "value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "2"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ES",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "2"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "NP",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "1"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "KH",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "1"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BE",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "1"
+          },
+          {
+            "label": "deaths",
+            "value": "0"
+          },
+          {
+            "label": "recovered",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "FI",
+      "linkedchart": {
+        "chart": {
+          "caption": "Total Confirmed, Deaths & Recovered",
+          "subcaption": "data collected by 2020.02.19",
+          "yaxisname": "Amount",
+          "palettecolors": "#FFC107",
+          "theme": "fusion"
+        },
+        "data": [
+          {
+            "label": "confirmed",
+            "value": "1"
           },
           {
             "label": "deaths",
@@ -519,7 +961,7 @@
       }
     },
     {
-      "id": "FI",
+      "id": "EG",
       "linkedchart": {
         "chart": {
           "caption": "Total Confirmed, Deaths & Recovered",
@@ -539,13 +981,13 @@
           },
           {
             "label": "recovered",
-            "value": "1"
+            "value": "0"
           }
         ]
       }
     },
     {
-      "id": "RU",
+      "id": "LK",
       "linkedchart": {
         "chart": {
           "caption": "Total Confirmed, Deaths & Recovered",
@@ -557,7 +999,7 @@
         "data": [
           {
             "label": "confirmed",
-            "value": "2"
+            "value": "1"
           },
           {
             "label": "deaths",
@@ -565,7 +1007,7 @@
           },
           {
             "label": "recovered",
-            "value": "2"
+            "value": "1"
           }
         ]
       }
