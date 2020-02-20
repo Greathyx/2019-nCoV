@@ -1,5 +1,5 @@
 <template>
-  <div id="chart-container">
+  <div id="chart-container" style="padding-left: 200px">
     <fusioncharts
             :type="type"
             :width="width"
@@ -19,7 +19,7 @@
             return {
                 type: "worldwithcountries",
                 renderAt: "chart-container",
-                width: "1100",
+                width: "1500",
                 height: "700",
                 dataFormat: "json",
                 dataSource: worldMapData,
