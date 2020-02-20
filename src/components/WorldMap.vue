@@ -1,5 +1,5 @@
 <template>
-  <div id="chart-container" style="padding-left: 200px">
+  <div id="chart-container">
     <fusioncharts
             :type="type"
             :width="width"
