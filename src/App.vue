@@ -57,13 +57,14 @@
       <v-container
               class="fill-height"
               fluid
+              style="padding: 0"
       >
-        <v-row
-                align="center"
-                justify="center"
-        >
+<!--        <v-row-->
+<!--                align="center"-->
+<!--                justify="center"-->
+<!--        >-->
           <router-view/>
-        </v-row>
+<!--        </v-row>-->
       </v-container>
     </v-content>
 
