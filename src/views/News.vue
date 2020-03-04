@@ -13,23 +13,39 @@
       <v-carousel-item
               v-for="(slide, i) in slides"
               :key="i"
+              :src="require('../assets/Carousel'+(i+1)+'.png')"
+              v-on:click="openNews(slide.href)"
       >
         <v-sheet
-                :color="colors[i]"
+                class="carousel_item"
                 height="100%"
+                tile
+                style="background-color: hsla(0,0%,0%,0.3)"
         >
           <v-row
                   class="fill-height"
                   align="center"
                   justify="center"
           >
-            <div class="display-3">{{ slide }} Slide</div>
+            <div class="display-3">{{slide.title}}</div>
           </v-row>
         </v-sheet>
       </v-carousel-item>
     </v-carousel>
 
-    <v-row style="margin: 20px 60px">
+    <v-col class="d-flex" style="margin: 20px 60px -20px 60px;" cols="12" md="3" sm="6">
+      <v-select
+              :items="selects"
+              v-model="selectVal"
+              label="Sort by time"
+              color="teal"
+              outlined
+              dense
+              @change="sortByDate()"
+      ></v-select>
+    </v-col>
+
+    <v-row style="margin: 0px 60px 20px 60px">
       <v-col cols="3" v-for="item in news.slice((page - 1) * 12, page * 12)" v-bind:key="item.title">
         <v-card
                 hover
@@ -64,7 +80,10 @@
 </template>
 
 <script>
-    import news from '../data/newsData';
+    import newsData from '../data/newsData';
+
+    let news = [];
+    news = newsData.reverse();
 
     export default {
         name: 'News',
@@ -72,19 +91,25 @@
         data: () => ({
             page: 1,
             pageLength: news.length % 12 === 0 ? news.length / 12 : news.length / 12 + 1,
-            colors: [
-                'indigo',
-                'warning',
-                'pink darken-2',
-                'red lighten-1',
-                'deep-purple accent-4',
-            ],
+            selects: ['New to old', 'Old to new'],
+            selectVal:'New to old',
             slides: [
-                'First',
-                'Second',
-                'Third',
-                'Fourth',
-                'Fifth',
+                {
+                    title: "Protective measures against 2019-nCoV",
+                    href: "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+                },
+                {
+                    href: 'https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd',
+                    title: 'WHO Situation Dashboard'
+                },
+                {
+                    href: 'https://www.cnbc.com/2020/03/04/italys-death-toll-from-the-coronavirus-is-now-worse-than-iran.html',
+                    title: 'Italy closes all schools for 2 weeks'
+                },
+                {
+                    href: 'https://www.aftonbladet.se/nyheter/a/3Jgxj9/senaste-nytt-om-coronaviruset',
+                    title: 'The spread of the coronavirus in Sweden'
+                },
             ],
             news: news
         }),
@@ -92,7 +117,18 @@
         methods: {
             openNews: function (link) {
                 window.open(link, '_blank');
+            },
+
+            sortByDate: function () {
+                news = news.reverse();
             }
         }
     };
 </script>
+
+<style>
+  .carousel_item:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+</style>
