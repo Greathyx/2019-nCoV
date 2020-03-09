@@ -36,7 +36,7 @@
                 justify-center
         >
           <v-flex shrink>
-            <WorldMap/>
+            <Map/>
 <!--            <Chart/>-->
           </v-flex>
         </v-layout>
@@ -47,13 +47,13 @@
 </template>
 
 <script>
-    import WorldMap from "../components/WorldMap";
+    import Map from "../components/Map";
     // import Chart from "../components/Chart";
 
     export default {
         name: 'Home',
         components: {
-            WorldMap
+            Map
             // Chart
         },
 
