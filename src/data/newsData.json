@@ -319,4 +319,39 @@
     "link": "https://www.chinadaily.com.cn/a/202003/03/WS5e5d2d35a31012821727bb3c.html",
     "subtitle": "People wear masks as they walk in Milan, Italy"
   }
+  {
+    "id": 41,
+    "date": "2020.03.06",
+    "picSrc": "https://img2.chinadaily.com.cn/images/202003/06/5e6217eba310128206594bc2.jpeg",
+    "title": "China vows to help other nations needing medical supplies",
+    "link": "https://www.chinadaily.com.cn/a/202003/06/WS5e6217eba31012821727d061.html",
+    "subtitle": "Medical workers carry a patient who are suspected of having coronavirus disease (COVID-19) in a Negative Pressure Isolation stretcher into a facility of Kyungpook National University Hospital"
+  }
+{
+    "id": 42,
+    "date": "2020.03.07",
+    "picSrc": "https://img2.chinadaily.com.cn/images/202003/07/5e63521aa310128206596fe5.jpeg",
+    "title": "China approves 29-minute testing kit for new coronavirus",
+    "link": "https://www.chinadaily.com.cn/a/202003/07/WS5e63521aa31012821727d239.html",
+    "subtitle": "Medical workers test novel coronavirus samples at a lab in Wuhan, Hubei province"
+  }
+
+
+
+{
+    "id": 43,
+    "date": "2020.03.08",
+    "picSrc": "https://img2.chinadaily.com.cn/images/202003/08/5e64f58ba31012820659bb71.jpeg",
+    "title": "WHO spokesperson says coronavirus has hit over 100 countries, regions",
+    "link": "https://www.chinadaily.com.cn/a/202003/08/WS5e64bba5a31012821727d36b.html",
+    "subtitle": "Following the outbreak of the coronavirus in Japan, a woman wearing a protective mask is seen at the scramble crossing in Shibuya shopping district in Tokyo"
+  }
+{
+    "id": 44,
+    "date": "2020.03.09",
+    "picSrc": "https://img2.chinadaily.com.cn/images/202003/09/5e66166fa3101282065a2eed.jpeg",
+    "title": "Youngest COVID-19 patient discharged",
+    "link": "https://www.chinadaily.com.cn/a/202003/09/WS5e66166fa31012821727d949.html",
+    "subtitle": "The youngest novel coronavirus patient in Henan province, just five days old at the onset of symptoms, recovers and is discharged from the hospital"
+  }
 ]
