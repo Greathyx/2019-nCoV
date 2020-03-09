@@ -41,7 +41,7 @@
     import {getName} from '../data/name'
 
     const countries = data.areaTree;
-    const confirmed_data = [];
+    let confirmed_data = [];
 
     countries.forEach(p => {
         if (getName(p.name)) {
