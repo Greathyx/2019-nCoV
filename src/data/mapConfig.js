@@ -1,37 +1,37 @@
 export default function mapConfig (province, data) {
     return {
-      visualMap: {
+      title: [{ // 后面再改成英文
+        text: '各国家及地区诊断人数',
+        subtext: '数据来自腾讯新闻和丁香园',
+        sublink: 'www.qq.com',
+      }],
+      visualMap: [{
         show: true,
         type: 'piecewise',
         min: 0,
-        max: 2000,
+        max: 100000,
+        realtime: true,
+        itemWidth: 10,
+        itemHeight: 10,
         align: 'right',
-        top: province ? 0 : '40%',
-        right: 0,
-        left: province ? '3%' : 'auto',
-        inRange: {
+        inRange:{
           color: [
             '#ffc0b1',
             '#ff8c71',
             '#ef1717',
-            '#9c0505'
+            '#9c0505',
+            '#800000'
           ]
         },
         pieces: [
-          { min: 1000 },
-          { min: 500, max: 999 },
-          { min: 100, max: 499 },
-          { min: 10, max: 99 },
-          { min: 1, max: 9 }
+          {min: 10000},
+          {min: 5000, max: 10000},
+          {min: 1000, max: 5000},
+          {min: 100, max: 1000},
+          {max: 100}
         ],
-        orient: province ? 'horizontal' : 'vertical',
-        showLabel: true,
-        itemWidth: 10,
-        itemHeight: 10,
-        textStyle: {
-          fontSize: 10
-        }
-      },
+        orient: 'vertical'
+      }],
       series: [{
         left: 'center',
         type: 'map',
@@ -45,7 +45,11 @@ export default function mapConfig (province, data) {
         mapType: province || 'world',
         data: data,
         zoom: 1.2,
-        roam: false,
+        roam: true,
+        scaleLimit:{
+          min: 1.2,
+          max: 10
+        },
         showLegendSymbol: true,
         emphasis: {},
         rippleEffect: {
