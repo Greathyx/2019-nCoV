@@ -319,8 +319,24 @@
     "link": "https://www.chinadaily.com.cn/a/202003/03/WS5e5d2d35a31012821727bb3c.html",
     "subtitle": "People wear masks as they walk in Milan, Italy"
   }
-  {
+{
     "id": 41,
+    "date": "2020.03.04",
+    "picSrc": "https://img2.chinadaily.com.cn/images/202003/04/5e5f2510a310128206585a13.jpeg",
+    "title": "China sharing experience on COVID-19 'nothing short of excellence': WHO experts",
+    "link": "https://www.chinadaily.com.cn/a/202003/04/WS5e5f1403a31012821727c2fc.html",
+    "subtitle": "Maria Van Kerkhove, Head a.i. Emerging Diseases and Zoonosis at the World Health Organization (WHO), speaks during a news conference on the situation of the coronavirus at the United Nations in Geneva, Switzerland "
+  }
+{
+    "id": 42,
+    "date": "2020.03.05",
+    "picSrc": "https://img2.chinadaily.com.cn/images/202003/05/5e6078d3a31012820658c4f6.jpeg",
+    "title": "California declares state of emergency over virus",
+    "link": "https://global.chinadaily.com.cn/a/202003/05/WS5e60591ca31012821727c788.html",
+    "subtitle": "File photo of California's Governor Gavin Newsom. "
+  }
+{
+    "id": 43,
     "date": "2020.03.06",
     "picSrc": "https://img2.chinadaily.com.cn/images/202003/06/5e6217eba310128206594bc2.jpeg",
     "title": "China vows to help other nations needing medical supplies",
@@ -328,18 +344,15 @@
     "subtitle": "Medical workers carry a patient who are suspected of having coronavirus disease (COVID-19) in a Negative Pressure Isolation stretcher into a facility of Kyungpook National University Hospital"
   }
 {
-    "id": 42,
+    "id": 44,
     "date": "2020.03.07",
     "picSrc": "https://img2.chinadaily.com.cn/images/202003/07/5e63521aa310128206596fe5.jpeg",
     "title": "China approves 29-minute testing kit for new coronavirus",
     "link": "https://www.chinadaily.com.cn/a/202003/07/WS5e63521aa31012821727d239.html",
     "subtitle": "Medical workers test novel coronavirus samples at a lab in Wuhan, Hubei province"
   }
-
-
-
 {
-    "id": 43,
+    "id": 45,
     "date": "2020.03.08",
     "picSrc": "https://img2.chinadaily.com.cn/images/202003/08/5e64f58ba31012820659bb71.jpeg",
     "title": "WHO spokesperson says coronavirus has hit over 100 countries, regions",
@@ -347,7 +360,7 @@
     "subtitle": "Following the outbreak of the coronavirus in Japan, a woman wearing a protective mask is seen at the scramble crossing in Shibuya shopping district in Tokyo"
   }
 {
-    "id": 44,
+    "id": 46,
     "date": "2020.03.09",
     "picSrc": "https://img2.chinadaily.com.cn/images/202003/09/5e66166fa3101282065a2eed.jpeg",
     "title": "Youngest COVID-19 patient discharged",
