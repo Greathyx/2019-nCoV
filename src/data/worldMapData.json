@@ -1,42 +1,4 @@
 {
-  "chart": {
-    "caption": "Current World-wide Infection Situation",
-    "subcaption": "confirmed by 2020.02.19",
-    "includevalueinlabels": "1",
-    "labelsepchar": ": ",
-    "legendposition": "bottom",
-    "entitytooltext": "$lname: <b>$datavalue </b>confirmed",
-    "entityFillHoverColor": "#FFF9C4",
-    "theme": "fusion",
-    "nullEntityColor": "#C2C2D6",
-    "nullEntityAlpha": "50",
-    "hoverOnNull": "0"
-  },
-  "colorrange": {
-    "gradient": "0",
-    "color": [
-      {
-        "minvalue": "1",
-        "maxvalue": "10",
-        "color": "#FF8A65"
-      },
-      {
-        "minvalue": "10",
-        "maxvalue": "50",
-        "color": "#FFAB91"
-      },
-      {
-        "minvalue": "50",
-        "maxvalue": "100",
-        "color": "#D84315"
-      },
-      {
-        "minvalue": "10000",
-        "maxvalue": "100000",
-        "color": "#DD2C00"
-      }
-    ]
-  },
   "data": [
     {
       "id": "101",

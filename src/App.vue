@@ -1,32 +1,5 @@
 <template>
   <v-app id="inspire">
-    <!--    <v-navigation-drawer-->
-    <!--            v-model="drawer"-->
-    <!--            app-->
-    <!--            clipped-->
-    <!--            :mini-variant="miniVariant"-->
-    <!--    >-->
-    <!--      <v-list dense>-->
-    <!--        <v-list-item link>-->
-    <!--          <v-list-item-action>-->
-    <!--            <v-icon>mdi-map-search</v-icon>-->
-    <!--          </v-list-item-action>-->
-    <!--          <v-list-item-content>-->
-    <!--            <v-list-item-title>Current Situation</v-list-item-title>-->
-    <!--          </v-list-item-content>-->
-    <!--        </v-list-item>-->
-
-    <!--        <v-list-item link>-->
-    <!--          <v-list-item-action>-->
-    <!--            <v-icon>mdi-chart-line</v-icon>-->
-    <!--          </v-list-item-action>-->
-    <!--          <v-list-item-content>-->
-    <!--            <v-list-item-title>Future Prediction</v-list-item-title>-->
-    <!--          </v-list-item-content>-->
-    <!--        </v-list-item>-->
-    <!--      </v-list>-->
-    <!--    </v-navigation-drawer>-->
-
     <v-app-bar
             app
             clipped-left
@@ -44,43 +17,28 @@
           <router-link to="/future" class="link">Future</router-link>
         </v-tab>
       </v-tabs>
-<!--      <v-spacer/>-->
-<!--      <v-switch-->
-<!--              v-model="$vuetify.theme.dark"-->
-<!--              primary-->
-<!--              label="Dark"-->
-<!--              hide-details-->
-<!--      />-->
+      <!--      <v-spacer/>-->
+      <!--      <v-switch-->
+      <!--              v-model="$vuetify.theme.dark"-->
+      <!--              primary-->
+      <!--              label="Dark"-->
+      <!--              hide-details-->
+      <!--      />-->
     </v-app-bar>
 
-    <v-content>
-      <v-container
-              class="fill-height"
-              fluid
-              style="padding: 0"
-      >
-<!--        <v-row-->
-<!--                align="center"-->
-<!--                justify="center"-->
-<!--        >-->
-          <router-view/>
-<!--        </v-row>-->
-      </v-container>
-    </v-content>
+    <router-view/>
 
     <Footer/>
   </v-app>
 </template>
 
 <script>
-    // import HelloWorld from './components/HelloWorld';
     import Footer from "./components/Footer";
 
     export default {
         name: 'App',
 
         components: {
-            // HelloWorld,
             Footer,
         },
 
