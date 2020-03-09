@@ -1,5 +1,4 @@
 import ECharts from '../components/ECharts.vue'
-// import { getPinyinByName } from '../data/zhen'
 // import buildLineConfig from './config_line'
 import mapConfig from './mapConfig'
 // import chinaMap from '../data/china.json'
@@ -30,24 +29,13 @@ export default function genMap (country) {
           value: p.total.confirm
       })
     })
-
-    /*
-    const xAxis = []
-    const dataConfirm = []
-    const dataSuspect = []
-    const dataDead = []
-    area.chinaDayList.forEach(day => {
-      xAxis.push(day.date)
-      dataConfirm.push(day.confirm)
-      dataSuspect.push(day.suspect)
-      dataDead.push(day.dead)
-    })
-    */
+    
 
     // mapData.total = area.chinaTotal
     // mapData.today = area.chinaAdd
     // mapData.table = area.areaTree[0].children
     mapData.map = mapConfig(country, result)
 
+    console.log(mapConfig(country, result))
   return mapData
 }
