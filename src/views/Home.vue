@@ -17,33 +17,11 @@
           </div>
           <div class="countries">
             <h5 style="margin: 10px auto">Confirmed Cases by Country</h5>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar1</p>
-            <p>sidebar2</p>
-            <p>sidebar2</p>
-            <p>sidebar2</p>
-            <p>sidebar2</p>
-            <p>sidebar2</p>
-            <p>sidebar2</p>
-            <p>sidebar2</p>
-            <p>sidebar2</p>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 0 25px">
+              <p v-for="item in confirmed_data" v-bind:key="item.name">
+                <span style="color: #F44336; font-weight: bold">{{item.value}}</span> {{item.name}}
+              </p>
+            </div>
           </div>
         </div>
 
@@ -57,8 +35,22 @@
 
 <script>
     // import Map from "../components/Map";
-    import WorldMap from "../components/WorldMap";
     // import Chart from "../components/Chart";
+    import WorldMap from "../components/WorldMap";
+    import data from '../data/data.json'
+    import {getName} from '../data/name'
+
+    const countries = data.areaTree;
+    const confirmed_data = [];
+
+    countries.forEach(p => {
+        if (getName(p.name)) {
+            confirmed_data.push({
+                name: getName(p.name),
+                value: p.total.confirm
+            })
+        }
+    });
 
     export default {
         name: 'Home',
@@ -69,11 +61,7 @@
         },
 
         data: () => ({
-            items: [
-                {title: 'Home', icon: 'mdi-home-city'},
-                {title: 'My Account', icon: 'mdi-account'},
-                {title: 'Users', icon: 'mdi-account-group-outline'},
-            ],
+            confirmed_data: confirmed_data
         }),
     };
 </script>

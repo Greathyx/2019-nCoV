@@ -20,7 +20,7 @@
                 type: "worldwithcountries",
                 renderAt: "chart-container",
                 width: "100%",
-                height: "70%",
+                height: "90%",
                 dataFormat: "json",
                 dataSource: {
                     "chart": {
