@@ -100,7 +100,7 @@
                 },
                 {
                     href: 'https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd',
-                    title: 'WHO Situation Dashboard'
+                    title: 'WHO situation dashboard'
                 },
                 {
                     href: 'https://www.cnbc.com/2020/03/04/italys-death-toll-from-the-coronavirus-is-now-worse-than-iran.html',
