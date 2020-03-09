@@ -24,12 +24,12 @@
                 dataFormat: "json",
                 dataSource: {
                     "chart": {
-                        "caption": "Current World-wide Infection Situation",
+                        "caption": "Current World-wide Confirmed Infection Situation",
                         "subcaption": "confirmed by 2020.02.19",
                         "includevalueinlabels": "1",
                         "labelsepchar": ": ",
                         "legendposition": "bottom",
-                        "entitytooltext": "$lname: <b>$datavalue </b>confirmed",
+                        // "entitytooltext": "$lname: <b>$datavalue </b>confirmed",
                         "entityFillHoverColor": "#FFF9C4",
                         "theme": "fusion",
                         "nullEntityColor": "#C2C2D6",
