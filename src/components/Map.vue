@@ -7,7 +7,6 @@
             :options='map'
             :init-options='initOptions'
             autoresize
-            @click='handleClick'
         ></e-charts>
         </div>
         <div style='width:200px'></div>

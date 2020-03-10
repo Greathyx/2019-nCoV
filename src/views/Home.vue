@@ -37,7 +37,6 @@
 
 <script>
     import Map from "../components/Map";
-    // import Chart from "../components/Chart";
     import data from '../data/data.json'
     import {getName2} from '../data/name'
 
@@ -53,17 +52,14 @@
         }
     });
 
-
     export default {
         name: 'Home',
         components: {
             Map
-            // Chart
         },
 
         data: () => ({
             confirmed_data: confirmed_data
-
         }),
     };
 </script>
