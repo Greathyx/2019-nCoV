@@ -6,9 +6,9 @@ import fusion_charts from './plugins/fusionCharts';
 import 'echarts/lib/chart/map'
 import 'echarts/lib/component/visualMap'
 import 'echarts/lib/component/title'
-import 'echarts/lib/chart/line'
-import 'echarts/lib/component/legend'
-import 'echarts/lib/component/tooltip'
+// import 'echarts/lib/chart/line'
+// import 'echarts/lib/component/legend'
+// import 'echarts/lib/component/tooltip'
 
 Vue.config.productionTip = false;
 
