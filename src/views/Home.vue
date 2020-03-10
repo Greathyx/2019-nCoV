@@ -26,7 +26,7 @@
         </div>
 
         <div class="main">
-          <Map/>
+<!--          <Map/>-->
         </div>
       </div>
     </v-content>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-    import Map from "../components/Map";
+    // import Map from "../components/Map";
     import data from '../data/data.json'
     import {getName2} from '../data/name'
 
@@ -55,7 +55,7 @@
     export default {
         name: 'Home',
         components: {
-            Map
+            // Map
         },
 
         data: () => ({
