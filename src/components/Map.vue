@@ -9,20 +9,20 @@
               autoresize
       ></e-charts>
     </div>
-    <!--        <div style='width:200px'></div>-->
-    <!--        <div>-->
-    <!--        <e-charts-->
-    <!--            ref='line'-->
-    <!--            :options='chart'-->
-    <!--            :initOptions='initOptions'-->
-    <!--            autoresize-->
-    <!--        ></e-charts>-->
-    <!--        <v-btn color='normal' @click='fNO'>Norden</v-btn>-->
-    <!--        <v-btn color='normal' @click='fEU'>Europe</v-btn>-->
-    <!--        <v-btn color='normal' @click='fAsia'>Asia</v-btn>-->
-    <!--        <v-btn color='normal' @click='fNA'>North America</v-btn>-->
-    <!--        <v-btn color='normal' @click='fCN'>China</v-btn>-->
-    <!--        </div>-->
+    <div style='width:200px'></div>
+    <div>
+      <e-charts
+              ref='line'
+              :options='chart'
+              :initOptions='initOptions'
+              autoresize
+      ></e-charts>
+      <v-btn color='normal' @click='fNO'>Norden</v-btn>
+      <v-btn color='normal' @click='fEU'>Europe</v-btn>
+      <v-btn color='normal' @click='fAsia'>Asia</v-btn>
+      <v-btn color='normal' @click='fNA'>North America</v-btn>
+      <v-btn color='normal' @click='fCN'>China</v-btn>
+    </div>
   </figure>
 </template>
 
@@ -52,28 +52,28 @@
             this.chart = genChart(this.place)
         },
 
-        // methods: {
-        //     fNO: function () {
-        //         this.place = 'Norden';
-        //         this.chart = genChart(this.place)
-        //     },
-        //     fEU: function () {
-        //         this.place = 'Europe';
-        //         this.chart = genChart(this.place)
-        //     },
-        //     fAsia: function () {
-        //         this.place = 'Asia';
-        //         this.chart = genChart(this.place)
-        //     },
-        //     fNA: function () {
-        //         this.place = 'America';
-        //         this.chart = genChart(this.place)
-        //     },
-        //     fCN: function () {
-        //         this.place = 'China';
-        //         this.chart = genChart(this.place);
-        //     }
-        // },
+        methods: {
+            fNO: function () {
+                this.place = 'Norden';
+                this.chart = genChart(this.place)
+            },
+            fEU: function () {
+                this.place = 'Europe';
+                this.chart = genChart(this.place)
+            },
+            fAsia: function () {
+                this.place = 'Asia';
+                this.chart = genChart(this.place)
+            },
+            fNA: function () {
+                this.place = 'America';
+                this.chart = genChart(this.place)
+            },
+            fCN: function () {
+                this.place = 'China';
+                this.chart = genChart(this.place);
+            }
+        },
 
         created() {
             let country = this.$route.path.substr(1);

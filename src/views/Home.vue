@@ -99,6 +99,6 @@
     background-color: bisque;
     flex-grow: 1;
     overflow: scroll;
-    max-height: calc(100vh);
+    max-height: calc(180vh);
   }
 </style>
