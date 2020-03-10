@@ -3,12 +3,7 @@ import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify';
 import fusion_charts from './plugins/fusionCharts';
-import 'echarts/lib/chart/map'
-import 'echarts/lib/component/visualMap'
-import 'echarts/lib/component/title'
-// import 'echarts/lib/chart/line'
-// import 'echarts/lib/component/legend'
-// import 'echarts/lib/component/tooltip'
+import eCharts from "./plugins/eCharts";
 
 Vue.config.productionTip = false;
 
@@ -16,5 +11,6 @@ new Vue({
   router,
   vuetify,
   fusion_charts,
+  eCharts,
   render: h => h(App)
 }).$mount('#app');
