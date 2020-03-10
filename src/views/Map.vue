@@ -9,9 +9,19 @@
             autoresize
             @click='handleClick'
         ></e-charts></div>
+        <div style='width:200px'></div>
         <div>
         <e-charts
+            ref='line'
+            :options='chart'
+            :initOptions='initOptions'
+            autoresize
         ></e-charts>
+        <v-btn color='normal' @click='fNO'>Norden</v-btn>
+        <v-btn color='normal' @click='fEU'>Europe</v-btn>
+        <v-btn color='normal' @click='fAsia'>Asia</v-btn>
+        <v-btn color='normal' @click='fNA'>North America</v-btn>
+        <v-btn color='normal' @click='fCN'>China</v-btn>
         </div>
     </figure>
 </template>
@@ -21,8 +31,7 @@
 import {getName} from '../data/name'
 import ECharts from '../components/ECharts.vue'
 import genMap from '../data/generateMap'
-// import data from '../data/data.json'
-// import worldMap from 'echarts/map/json/world.json'
+import genChart from '../data/generateChart'
 
 export default {
     components:{
@@ -30,8 +39,10 @@ export default {
     },
     data(){
         return{
+            place: 'Europe',
             updateTime: {},
             map: {},
+            chart: {},
             countryName: '',
             initOptions:{
                 renderer: 'canvas'
@@ -39,71 +50,35 @@ export default {
         }
     },
     mounted(){
-        //var myCanvas = document.getElementById('')
+        this.chart=genChart(this.place)
     },
-    /*
-    methods: {
-        handleClick(params){
 
+    methods:{
+        fNO: function(){
+            this.place='Norden'
+            this.chart=genChart(this.place)
+        },
+        fEU: function(){
+            this.place='Europe'
+            this.chart=genChart(this.place)
+        },
+        fAsia: function(){
+            this.place='Asia'
+            this.chart=genChart(this.place)
+        },
+        fNA: function(){
+            this.place='America'
+            this.chart=genChart(this.place)
+        },
+        fCN: function(){
+            this.place='China'
+            this.chart=genChart(this.place)
+            console.log(this.chart)
         }
+        
+
     },
-    */
     created(){
-
-        // 虽然很丑
-        /*
-        this.updateTime=data.lastUpdateTime
-        const countries=data.areaTree
-        const result=[]
-        ECharts.registerMap('world', worldMap)
-        countries.forEach(p=>{
-            result.push({
-                name: getName(p.name),
-                value: p.total.confirm
-            })
-        })
-
-        const map={
-            title:[{
-                text:'test'
-            }],
-            visualMap:{
-                show:true,
-                type:'continuous',
-                min:0,
-                max:200000,
-                range:[0, 100000],
-                align: 'right',
-                inRange:{
-                    color:[
-                        'lightskyblue',
-                        'orangered'
-                    ]
-                },
-                calculable: true,
-                realtime: true,
-                itemWidth: 100,
-                itemHeight:1000
-            },
-            series: [{
-                left: 'center',
-                type: 'map',
-                label:{
-                    show:false,
-                    formatter: '{b}\n{c}',
-                    position: 'inside',
-                    fontSize: 14
-                },
-                mapType: 'world',
-                data: result,
-                zoom: 1.2,
-                roam: false
-            }]
-        }
-        this.map=map
-        */
-
-
         let country = this.$route.path.substr(1)
         this.countryName = getName(country)
         const{
@@ -111,11 +86,8 @@ export default {
             // total,
             map
         } = genMap(this.countryName)
-
         this.updateTime=updateTime
         this.map=map
-        console.log(map)
-
     }
 }
 </script>
