@@ -26,7 +26,7 @@
         </div>
 
         <div class="main">
-<!--          <Map/>-->
+          <Map/>
         </div>
       </div>
     </v-content>
@@ -36,26 +36,26 @@
 </template>
 
 <script>
-    // import Map from "../components/Map";
-    import data from '../data/data.json'
-    import {getName2} from '../data/name'
+    import Map from "../components/Map";
+    import data from '../data/overall';
+    import {getName, CODE} from '../data/name'
 
-    const countries = data.areaTree;
     let confirmed_data = [];
-
-    countries.forEach(p => {
-        if (getName2(p.name)) {
+    //var temp=data.filter(e=>e.countryCode=='GB'&&e.date='2020-03-10')
+    for (let code of CODE) {
+        let temp = data.filter(e => e.countryCode === code && e.date === '2020-03-09' && !e.province);
+        temp.forEach(() => {
             confirmed_data.push({
-                name: getName2(p.name),
-                value: p.total.confirm
+                name: getName(code),
+                value: temp[0].confirmed
             })
-        }
-    });
+        })
+    }
 
     export default {
         name: 'Home',
         components: {
-            // Map
+            Map
         },
 
         data: () => ({
@@ -99,6 +99,6 @@
     background-color: bisque;
     flex-grow: 1;
     overflow: scroll;
-    /*max-height: calc(100vh);*/
+    max-height: calc(100vh);
   }
 </style>
