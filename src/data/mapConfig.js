@@ -1,9 +1,8 @@
 export default function mapConfig (province, data) {
     return {
       title: [{ // 后面再改成英文
-        text: '各国家及地区诊断人数',
-        subtext: '数据来自腾讯新闻和丁香园',
-        sublink: 'www.qq.com',
+        text: 'Current World-wide Confirmed Infection Situation',
+        left: 'center'
       }],
       visualMap: [{
         show: true,
@@ -14,6 +13,7 @@ export default function mapConfig (province, data) {
         itemWidth: 10,
         itemHeight: 10,
         align: 'right',
+        top: 'center',
         inRange:{
           color: [
             '#ffc0b1',
@@ -25,10 +25,11 @@ export default function mapConfig (province, data) {
         },
         pieces: [
           {min: 10000},
-          {min: 5000, max: 10000},
-          {min: 1000, max: 5000},
-          {min: 100, max: 1000},
-          {max: 100}
+          {min: 1000, max: 9999},
+          {min:500, max:999},
+          {min: 100, max: 499},
+          {min:10, max: 99},
+          {max: 9}
         ],
         orient: 'vertical'
       }],
