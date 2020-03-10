@@ -9,6 +9,20 @@
             autoresize
             @click='handleClick'
         ></e-charts></div>
+        <div style='width:200px'></div>
+        <div>
+        <e-charts
+            ref='line'
+            :options='chart'
+            :initOptions='initOptions'
+            autoresize
+        ></e-charts>
+        <v-btn color='normal' @click='fNO'>Norden</v-btn>
+        <v-btn color='normal' @click='fEU'>Europe</v-btn>
+        <v-btn color='normal' @click='fAsia'>Asia</v-btn>
+        <v-btn color='normal' @click='fNA'>North America</v-btn>
+        <v-btn color='normal' @click='fCN'>China</v-btn>
+        </div>
     </figure>
 </template>
 
@@ -17,6 +31,7 @@
 import {getName} from '../data/name'
 import ECharts from '../components/ECharts.vue'
 import genMap from '../data/generateMap'
+import genChart from '../data/generateChart'
 
 export default {
     components:{
@@ -24,8 +39,10 @@ export default {
     },
     data(){
         return{
+            place: 'Europe',
             updateTime: {},
             map: {},
+            chart: {},
             countryName: '',
             initOptions:{
                 renderer: 'canvas'
@@ -33,17 +50,35 @@ export default {
         }
     },
     mounted(){
-        //var myCanvas = document.getElementById('')
+        this.chart=genChart(this.place)
     },
-    /*
-    methods: {
-        handleClick(params){
 
+    methods:{
+        fNO: function(){
+            this.place='Norden'
+            this.chart=genChart(this.place)
+        },
+        fEU: function(){
+            this.place='Europe'
+            this.chart=genChart(this.place)
+        },
+        fAsia: function(){
+            this.place='Asia'
+            this.chart=genChart(this.place)
+        },
+        fNA: function(){
+            this.place='America'
+            this.chart=genChart(this.place)
+        },
+        fCN: function(){
+            this.place='China'
+            this.chart=genChart(this.place)
+            console.log(this.chart)
         }
-    },
-    */
-    created(){
+        
 
+    },
+    created(){
         let country = this.$route.path.substr(1)
         this.countryName = getName(country)
         const{
@@ -51,7 +86,6 @@ export default {
             // total,
             map
         } = genMap(this.countryName)
-
         this.updateTime=updateTime
         this.map=map
     }
