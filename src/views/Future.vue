@@ -16,7 +16,8 @@
 
       <p>
         We can assume that the infectious rate, recovery rate and lethality used in the model are fixed values. We set
-        the number of susceptible patients (r2) that can be exposed to patients during the incubation period as the
+        <span style="font-weight: bold">the number of susceptible patients (r2)</span> that can be exposed to patients
+        during the incubation period as the
         variables to be used in the model. It can be clearly seen from the images that the greater the number of
         patients that can be reached during the incubation period, the faster the development of the epidemic, the
         rising trend of the number of infected people will be more severe, and the total number of eventually infected
