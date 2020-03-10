@@ -8,21 +8,22 @@
             :init-options='initOptions'
             autoresize
             @click='handleClick'
-        ></e-charts></div>
-        <div style='width:200px'></div>
-        <div>
-        <e-charts
-            ref='line'
-            :options='chart'
-            :initOptions='initOptions'
-            autoresize
         ></e-charts>
-        <v-btn color='normal' @click='fNO'>Norden</v-btn>
-        <v-btn color='normal' @click='fEU'>Europe</v-btn>
-        <v-btn color='normal' @click='fAsia'>Asia</v-btn>
-        <v-btn color='normal' @click='fNA'>North America</v-btn>
-        <v-btn color='normal' @click='fCN'>China</v-btn>
         </div>
+<!--        <div style='width:200px'></div>-->
+<!--        <div>-->
+<!--        <e-charts-->
+<!--            ref='line'-->
+<!--            :options='chart'-->
+<!--            :initOptions='initOptions'-->
+<!--            autoresize-->
+<!--        ></e-charts>-->
+<!--        <v-btn color='normal' @click='fNO'>Norden</v-btn>-->
+<!--        <v-btn color='normal' @click='fEU'>Europe</v-btn>-->
+<!--        <v-btn color='normal' @click='fAsia'>Asia</v-btn>-->
+<!--        <v-btn color='normal' @click='fNA'>North America</v-btn>-->
+<!--        <v-btn color='normal' @click='fCN'>China</v-btn>-->
+<!--        </div>-->
     </figure>
 </template>
 
