@@ -2,6 +2,7 @@ export default function mapConfig (province, data) {
     return {
       title: [{ // 后面再改成英文
         text: 'Current World-wide Confirmed Infection Situation',
+        subtext: 'Some countries may limit the number of tests\nIf the number of confirmed displayed is 0, there may be no data in the country or region.',
         left: 'center'
       }],
       visualMap: [{

@@ -26,7 +26,11 @@ export default function genMap (country) {
   for(var ccode of CODE){
       var temp=data.filter(e=>e.countryCode==ccode&&!e.province&&e.date==todaydate)
       if(temp.length==0){
-          continue
+        // 把 NaN 变成 0
+        result.push({
+          name: getName(ccode),
+          value: 0
+        })
       }
       result.push({
           name: getName(ccode),
