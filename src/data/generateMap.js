@@ -23,20 +23,27 @@ export default function genMap (country) {
   const todaydate=yyyy+'-'+mm+'-'+dd
   
   ECharts.registerMap('world', worldMap)
+  // 把 NaN 变成 0
+  // 先用 0 把所有地区填满
+  for(var code of CODE){
+    result.push({
+      name: getName(code),
+      value: 0
+    })
+  }
+
   for(var ccode of CODE){
       var temp=data.filter(e=>e.countryCode==ccode&&!e.province&&e.date==todaydate)
       if(temp.length==0){
-        // 把 NaN 变成 0
-        result.push({
-          name: getName(ccode),
-          value: 0
-        })
+        continue
       }
       result.push({
           name: getName(ccode),
           value:temp[0].confirmed
       })
   }
+
+  console.log(result)
 
     mapData.map = mapConfig(country, result)
   return mapData
