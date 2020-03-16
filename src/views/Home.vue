@@ -4,15 +4,15 @@
       <div class="fill-height box">
         <div class="fill-height sidebar">
           <div class="total" style="background-color: #FFCDD2">
-            <h1>111,362</h1>
+            <h1>174,615</h1>
             <h4>Total Confirmed</h4>
           </div>
           <div class="total" style="background-color: #E0E0E0">
-            <h1>3,892</h1>
+            <h1>6,513</h1>
             <h4>Total Deaths</h4>
           </div>
           <div class="total" style="background-color: #C8E6C9">
-            <h1>62,392</h1>
+            <h1>77,657</h1>
             <h4>Total Recovered</h4>
           </div>
           <div class="countries">
@@ -41,7 +41,6 @@
     import {getName, CODE} from '../data/name'
 
     let confirmed_data = [];
-    //var temp=data.filter(e=>e.countryCode=='GB'&&e.date='2020-03-10')
     for (let code of CODE) {
         let temp = data.filter(e => e.countryCode === code && e.date === '2020-03-09' && !e.province);
         temp.forEach(() => {
@@ -49,6 +48,9 @@
                 name: getName(code),
                 value: temp[0].confirmed
             })
+        });
+        confirmed_data.sort((a, b) => {
+            return b.value - a.value;
         })
     }
 

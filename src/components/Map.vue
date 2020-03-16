@@ -1,6 +1,7 @@
 <template>
   <figure>
-    <p>update time: {{updateTime}}</p>
+<!--    <p>update time: {{updateTime}}</p>-->
+    <p>update time: 2020-03-16</p>
     <div id='myCanvas'>
       <e-charts
               ref='map'
@@ -17,10 +18,10 @@
               :initOptions='initOptions'
               autoresize
       ></e-charts>
-      <v-btn color='normal' @click='fNO'>Norden</v-btn>
-      <v-btn color='normal' @click='fEU'>Europe</v-btn>
-      <v-btn color='normal' @click='fAsia'>Asia</v-btn>
-      <v-btn color='normal' @click='fNA'>North America</v-btn>
+      <v-btn style="margin-right: 15px" color='normal' @click='fNO'>Norden</v-btn>
+      <v-btn style="margin-right: 15px" color='normal' @click='fEU'>Europe</v-btn>
+      <v-btn style="margin-right: 15px" color='normal' @click='fAsia'>Asia</v-btn>
+      <v-btn style="margin-right: 15px" color='normal' @click='fNA'>North America</v-btn>
       <v-btn color='normal' @click='fCN'>China</v-btn>
     </div>
   </figure>

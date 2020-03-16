@@ -12,9 +12,13 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-Data Source: <a style='color:#ffffff' href='https://i.snssdk.com/ugc/hotboard_fe/hot_list/template/hot_list/forum_tab.html'>Bytedance News</a><br>
-API Thanks: <a style='color:#ffffff' href='https://github.com/canghailan/Wuhan-2019-nCoV'>canghailan/Wuhan-2019-nCoV</a><br>
-Powered By <a style='color:#ffffff' href='https://vuejs.org'>Vue</a> & <a style='color:#ffffff' href='https://echarts.apache.org/en/index.html'>ECharts</a>
+        Data Source: <a target="_blank" style='color:#ffffff'
+                        href='https://i.snssdk.com/ugc/hotboard_fe/hot_list/template/hot_list/forum_tab.html'>
+        Bytedance News</a><br>
+        API Thanks: <a target="_blank" style='color:#ffffff' href='https://github.com/canghailan/Wuhan-2019-nCoV'>
+        canghailan/Wuhan-2019-nCoV</a><br>
+        Powered By <a target="_blank" style='color:#ffffff' href='https://vuejs.org'>Vue</a> &
+        <a target="_blank" style='color:#ffffff' href='https://echarts.apache.org/en/index.html'>ECharts</a>
       </v-card-text>
       <v-divider/>
       <v-card-text class="white--text">
@@ -26,7 +30,6 @@ Powered By <a style='color:#ffffff' href='https://vuejs.org'>Vue</a> & <a style=
 
 <script>
     export default {
-        data: () => ({
-        }),
+        data: () => ({}),
     }
 </script>
