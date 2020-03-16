@@ -10,18 +10,21 @@ import { getName, CODE } from './name'
 export default function genMap (country) {
   const mapData = {
     updateTime: data.lastUpdateTime,
-    map: null// ,
-    // table: null,
-    // isProvince: false,
-    // chinaDayList: null
+    map: null
   }
 
   const result = []
+
+  // generate date of today
+  const today= new Date()
+  const dd=String(today.getDate()).padStart(2, '0')
+  const mm=String(today.getMonth()+1).padStart(2,'0') // Jan is 0
+  const yyyy=today.getFullYear()
+  const todaydate=yyyy+'-'+mm+'-'+dd
   
-  // date 写死了有点麻烦啊……
   ECharts.registerMap('world', worldMap)
   for(var ccode of CODE){
-      var temp=data.filter(e=>e.countryCode==ccode&&!e.province&&e.date=='2020-03-09')
+      var temp=data.filter(e=>e.countryCode==ccode&&!e.province&&e.date==todaydate)
       if(temp.length==0){
           continue
       }
@@ -31,9 +34,6 @@ export default function genMap (country) {
       })
   }
 
-    // mapData.total = area.chinaTotal
-    // mapData.today = area.chinaAdd
-    // mapData.table = area.areaTree[0].children
     mapData.map = mapConfig(country, result)
   return mapData
 }
