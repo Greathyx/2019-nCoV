@@ -98,25 +98,26 @@
       </div>
 
       <div class="objectives">
-        <h1 style="margin-bottom: 5px" class="objectives">Learning Objectives Reached</h1>
-        <p>
-          1. We cooperated and worked independently and created an information visualization
-          system with certain functions. The data is displayed through interactive data conversion
-          and visual mapping.
-        </p>
-        <p>
-          2. According to the data form and content, we have selected a visualization form suitable for the data.
-        </p>
-        <p>
-          3. We browsed other online visualization sites, gave them feedback, and applied what we learned to our system.
-        </p>
-        <p>
-          4. Our system takes into account a wide range of user groups and strives to make them easy to use.
-        </p>
-
-        <p>
-          5. We conducted user interviews and other evaluation methods and obtained constructive criticism from users.
-        </p>
+        <h1 style="margin-bottom: 20px; text-align: center">Learning Objectives Reached</h1>
+        <div>
+          <p style="margin-top: -6px">
+            1. We cooperated and worked independently and created an information visualization
+            system with certain functions. The data is displayed through interactive data conversion
+            and visual mapping.
+          </p>
+          <p style="margin-top: -6px">
+            2. According to the data form and content, we have selected a visualization form suitable for the data.
+          </p>
+          <p style="margin-top: -6px">
+            3. We browsed other online visualization sites, gave them feedback, and applied what we learned to our system.
+          </p>
+          <p style="margin-top: -6px">
+            4. Our system takes into account a wide range of user groups and strives to make them easy to use.
+          </p>
+          <p style="margin-top: -6px">
+            5. We conducted user interviews and other evaluation methods and obtained constructive criticism from users.
+          </p>
+        </div>
       </div>
 
       <div class="members_intro">
@@ -236,10 +237,7 @@
   }
 
   .objectives {
-    display: flex;
     padding: 0 100px 60px 100px;
-    flex-direction: column;
-    justify-content: center;
   }
 
   .members_intro {
