@@ -12,7 +12,7 @@
       >
         <v-col class="text-center" cols="12">
           <h1 class="font-weight-bold display-4">2019-nCoV Tracking</h1>
-          <h4 class="font-weight-medium title"
+          <h4 class="font-weight-medium headline"
               style="margin-top: 20px">
             The World-wide Epidemic
           </h4>
@@ -56,7 +56,17 @@
 
       <div class="project">
         <div class="left2">
-          <h1 style="margin-bottom: 5px">Our Project</h1>
+          <h1 style="margin-bottom: 5px">
+            Our Project
+            <a href="/"
+               class="v-markdown--link v-markdown--external"
+               style="text-decoration: none; color: teal"
+            >
+              <i class="v-icon mdi mdi-open-in-new"
+                 style="font-size: 20px; vertical-align: baseline;"
+              ></i>
+            </a>
+          </h1>
           <p class="text-justify">
             1. We visualized the current data of new coronavirus break, we want to discuss
             how severe the situation is and we also want to raise people's emphasis on this epidemic.
@@ -85,8 +95,84 @@
             ></v-carousel-item>
           </v-carousel>
         </div>
+      </div>
 
+      <div class="objectives">
+        <h1 style="margin-bottom: 5px" class="objectives">Learning Objectives Reached</h1>
+        <p>
+          1. We cooperated and worked independently and created an information visualization
+          system with certain functions. The data is displayed through interactive data conversion
+          and visual mapping.
+        </p>
+        <p>
+          2. According to the data form and content, we have selected a visualization form suitable for the data.
+        </p>
+        <p>
+          3. We browsed other online visualization sites, gave them feedback, and applied what we learned to our system.
+        </p>
+        <p>
+          4. Our system takes into account a wide range of user groups and strives to make them easy to use.
+        </p>
 
+        <p>
+          5. We conducted user interviews and other evaluation methods and obtained constructive criticism from users.
+        </p>
+      </div>
+
+      <div class="members_intro">
+        <h1 style="margin-bottom: 5px">Our Team</h1>
+        <v-row>
+          <v-col cols="4">
+            <v-card class="mx-auto" max-width="300" height="400px">
+              <v-img
+                      :src="require('../assets/yuxuanh.jpg')"
+                      height="200px"
+              ></v-img>
+              <v-card-title>Yuxuan Huang</v-card-title>
+              <v-card-subtitle>
+                • cook data<br/>
+                • design the architecture of the website<br/>
+                • front-end programming<br/>
+                • deploy the website<br/>
+                • design visual structures<br/>
+                • make presentation ppts<br/>
+              </v-card-subtitle>
+            </v-card>
+          </v-col>
+
+          <v-col cols="4">
+            <v-card class="mx-auto" max-width="300" height="400px">
+              <v-img
+                      :src="require('../assets/jiamengb.jpg')"
+                      height="200px"
+              ></v-img>
+              <v-card-title>Jiameng Bian</v-card-title>
+              <v-card-subtitle>
+                • crawl data and cook data<br/>
+                • front-end programming<br/>
+                • design visual structures<br/>
+                • make presentation ppts<br/>
+              </v-card-subtitle>
+            </v-card>
+          </v-col>
+
+          <v-col cols="4">
+            <v-card class="mx-auto" max-width="300" height="400px">
+              <v-img
+                      :src="require('../assets/chenhaol.jpg')"
+                      height="200px"
+              ></v-img>
+              <v-card-title>Chenhao Li</v-card-title>
+              <v-card-subtitle>
+                • collect news data<br/>
+                • research the SEIR theory and build it<br/>
+                • carry out evaluation tests<br/>
+                • make the demo video<br/>
+                • design the view<br/>
+              </v-card-subtitle>
+            </v-card>
+          </v-col>
+        </v-row>
       </div>
     </div>
   </v-content>
@@ -148,4 +234,19 @@
     display: flex;
     justify-content: center;
   }
+
+  .objectives {
+    display: flex;
+    padding: 0 100px 60px 100px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .members_intro {
+    padding: 0 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 </style>
