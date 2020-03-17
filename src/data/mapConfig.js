@@ -5,6 +5,9 @@ export default function mapConfig (province, data) {
         subtext: 'Some countries may limit the number of tests.\nIf the number of confirmed displayed is 0, there may be no data in the country or region.',
         left: 'center'
       }],
+        tooltip:{
+            trigger: 'item'
+        },
       visualMap: [{
         show: true,
         type: 'piecewise',
@@ -37,10 +40,10 @@ export default function mapConfig (province, data) {
       series: [{
         left: 'center',
         type: 'map',
-        name: '确诊人数',
+        name: 'Confirmed: ',
         label: {
           show: false,
-          formatter: '{b}\n{c}',
+          formatter: '{b}',
           position: 'inside',
           fontSize: 14
         },
