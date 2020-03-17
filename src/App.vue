@@ -16,6 +16,9 @@
         <v-tab>
           <router-link to="/future" class="link">Future</router-link>
         </v-tab>
+        <v-tab>
+          <router-link to="/about" class="link">About</router-link>
+        </v-tab>
       </v-tabs>
       <!--      <v-spacer/>-->
       <!--      <v-switch-->
