@@ -43,7 +43,7 @@ export default function genMap (country) {
       })
   }
 
-  console.log(result)
+  //console.log(result)
 
     mapData.map = mapConfig(country, result)
   return mapData
