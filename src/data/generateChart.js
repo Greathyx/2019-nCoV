@@ -1,9 +1,5 @@
 // 生成折线图，使用今日头条数据
-//import ECharts from '../components/ECharts.vue'
-//import chartConfig from './chartConfig'
-// import chinaMap from '../data/china.json'
-//import worldMap from 'echarts/map/json/world.json'
-import data from './overall.json'
+import data from './data.json'
 import chartConfig from './chartConfig.js'
 import {getName} from './name'
 
@@ -72,6 +68,5 @@ export default function genChart(place) {
         chart.chart = chartConfig(xAxis, cNames, res)
     }
 
-    //console.log(date)
     return chart.chart
 }

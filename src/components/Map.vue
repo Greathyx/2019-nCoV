@@ -1,7 +1,7 @@
 <template>
   <figure>
     <p>update time: {{updateTime}}</p>
-    <div id='myCanvas'>
+    <div style="display: flex; justify-content: center">
       <e-charts
               ref='map'
               :options='map'
@@ -9,19 +9,20 @@
               autoresize
       ></e-charts>
     </div>
-    <div style='width:200px'></div>
-    <div>
+    <div style="display: flex; flex-direction: column; align-items: center">
       <e-charts
               ref='line'
               :options='chart'
               :initOptions='initOptions'
               autoresize
       ></e-charts>
-      <v-btn style="margin-right: 15px" color='normal' @click='fNO'>Norden</v-btn>
-      <v-btn style="margin-right: 15px" color='normal' @click='fEU'>Europe</v-btn>
-      <v-btn style="margin-right: 15px" color='normal' @click='fAsia'>Asia</v-btn>
-      <v-btn style="margin-right: 15px" color='normal' @click='fNA'>North America</v-btn>
-      <v-btn color='normal' @click='fCN'>China</v-btn>
+      <div>
+        <v-btn style="margin-right: 15px" color='normal' @click='fNO'>Norden</v-btn>
+        <v-btn style="margin-right: 15px" color='normal' @click='fEU'>Europe</v-btn>
+        <v-btn style="margin-right: 15px" color='normal' @click='fAsia'>Asia</v-btn>
+        <v-btn style="margin-right: 15px" color='normal' @click='fNA'>North America</v-btn>
+        <v-btn color='normal' @click='fCN'>China</v-btn>
+      </div>
     </div>
   </figure>
 </template>
@@ -32,19 +33,13 @@
     import genMap from '../data/generateMap'
     import genChart from '../data/generateChart'
 
-    // let xmlHttp = new XMLHttpRequest();
-    // xmlHttp.open( "GET",
-    //     "https://raw.githubusercontent.com/canghailan/Wuhan-2019-nCoV/master/Wuhan-2019-nCoV.json",
-    //     false ); // false for synchronous request
-    // xmlHttp.send( null );
-    // let data = xmlHttp.responseText;
-
     export default {
         components: {
             ECharts,
         },
 
         data: () => ({
+            data: [],
             place: 'Europe',
             updateTime: {},
             map: {},
@@ -91,7 +86,7 @@
                 map
             } = genMap(this.countryName);
             this.updateTime = updateTime;
-            this.map = map
+            this.map = map;
         }
     }
 </script>

@@ -1,10 +1,8 @@
 // 撤掉腾讯数据源，换用今日头条数据
 import ECharts from '../components/ECharts.vue'
-// import buildLineConfig from './config_line'
 import mapConfig from './mapConfig'
-// import chinaMap from '../data/china.json'
 import worldMap from 'echarts/map/json/world.json'
-import data from './overall.json'
+import data from './data.json'
 import {getName, CODE} from './name'
 
 export default function genMap(country) {
@@ -15,11 +13,10 @@ export default function genMap(country) {
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
     const yyyy = today.getFullYear();
-    const todaydate = yyyy + '-' + mm + '-' + dd;
+    const today_date = yyyy + '-' + mm + '-' + dd;
 
     let mapData = {
-        // updateTime: data.lastUpdateTime,
-        updateTime: todaydate,
+        updateTime: today_date,
         map: null
     };
 
@@ -34,8 +31,8 @@ export default function genMap(country) {
     }
 
     for (var ccode of CODE) {
-        var temp = data.filter(e => e.countryCode === ccode && !e.province && e.date === todaydate);
-        if (temp.length == 0) {
+        var temp = data.filter(e => e.countryCode === ccode && !e.province && e.date === today_date);
+        if (temp.length === 0) {
             continue
         }
         result.push({
