@@ -1,7 +1,6 @@
 <template>
   <figure>
-<!--    <p>update time: {{updateTime}}</p>-->
-    <p>update time: 2020-03-16</p>
+    <p>update time: {{updateTime}}</p>
     <div id='myCanvas'>
       <e-charts
               ref='map'
@@ -32,6 +31,13 @@
     import ECharts from '../components/ECharts.vue'
     import genMap from '../data/generateMap'
     import genChart from '../data/generateChart'
+
+    // let xmlHttp = new XMLHttpRequest();
+    // xmlHttp.open( "GET",
+    //     "https://raw.githubusercontent.com/canghailan/Wuhan-2019-nCoV/master/Wuhan-2019-nCoV.json",
+    //     false ); // false for synchronous request
+    // xmlHttp.send( null );
+    // let data = xmlHttp.responseText;
 
     export default {
         components: {
