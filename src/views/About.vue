@@ -89,9 +89,15 @@
           >
             <v-carousel-item
                     width="715" height="390"
-                    v-for="i in 2"
-                    :key="i"
-                    :src="require('../assets/about'+(i)+'.png')"
+                    :src="require('../assets/about0.png')"
+            ></v-carousel-item>
+            <v-carousel-item
+                    width="715" height="390"
+                    :src="require('../assets/about1.png')"
+            ></v-carousel-item>
+            <v-carousel-item
+                    width="715" height="390"
+                    :src="require('../assets/about2.png')"
             ></v-carousel-item>
           </v-carousel>
         </div>
@@ -106,16 +112,20 @@
             and visual mapping.
           </p>
           <p style="margin-top: -6px">
-            2. According to the data form and content, we have selected a visualization form suitable for the data.
+            2. According to the data form and content, we have selected a visualization form
+            suitable for the data.
           </p>
           <p style="margin-top: -6px">
-            3. We browsed other online visualization sites, gave them feedback, and applied what we learned to our system.
+            3. We browsed other online visualization sites, gave them feedback, and applied
+            what we learned to our system.
           </p>
           <p style="margin-top: -6px">
-            4. Our system takes into account a wide range of user groups and strives to make them easy to use.
+            4. Our system takes into account a wide range of user groups and strives to make
+            them easy to use.
           </p>
           <p style="margin-top: -6px">
-            5. We conducted user interviews and other evaluation methods and obtained constructive criticism from users.
+            5. We conducted user interviews and other evaluation methods and obtained
+            constructive criticism from users.
           </p>
         </div>
       </div>
@@ -202,7 +212,6 @@
   .background {
     display: flex;
     padding: 100px 100px 60px 100px;
-    /*height: calc(95vh);*/
   }
 
   .left {
