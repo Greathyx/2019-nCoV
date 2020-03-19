@@ -1,8 +1,9 @@
 <template>
+  <v-content>
   <v-container
           class="fill-height"
           fluid
-          style="min-height: 434px; padding: 0"
+          style="padding: 0"
   >
     <v-carousel
             cycle
@@ -74,9 +75,10 @@
             v-model="page"
             :length=pageLength
             :total-visible="7"
-            style="margin-bottom: 20px"
+            style="margin-bottom: 30px"
     ></v-pagination>
   </v-container>
+  </v-content>
 </template>
 
 <script>

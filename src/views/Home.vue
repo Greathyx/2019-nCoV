@@ -1,30 +1,36 @@
 <template>
   <v-app id="inspire">
-    <v-content>
-      <div class="fill-height box">
-        <div class="fill-height sidebar">
-          <div class="total" style="background-color: #FFCDD2">
-            <h1>174,615</h1>
-            <h4>Total Confirmed</h4>
-          </div>
-          <div class="total" style="background-color: #E0E0E0">
-            <h1>6,513</h1>
-            <h4>Total Deaths</h4>
-          </div>
-          <div class="total" style="background-color: #C8E6C9">
-            <h1>77,657</h1>
-            <h4>Total Recovered</h4>
-          </div>
-          <div class="countries">
-            <h5 style="margin: 10px auto">Confirmed Cases by Country</h5>
-            <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 0 25px">
-              <p v-for="item in confirmed_data" v-bind:key="item.name">
-                <span style="color: #F44336; font-weight: bold">{{item.value}}</span> {{item.name}}
-              </p>
-            </div>
+    <v-navigation-drawer
+            v-model="drawer"
+            app
+            clipped
+    >
+      <div class="fill-height sidebar">
+        <div class="total" style="background-color: #FFCDD2;">
+          <h1>174,615</h1>
+          <h4>Total Confirmed</h4>
+        </div>
+        <div class="total" style="background-color: #E0E0E0">
+          <h1>6,513</h1>
+          <h4>Total Deaths</h4>
+        </div>
+        <div class="total" style="background-color: #C8E6C9">
+          <h1>77,657</h1>
+          <h4>Total Recovered</h4>
+        </div>
+        <div class="countries">
+          <h5 style="margin: 10px auto">Confirmed Cases by Country</h5>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 0 25px">
+            <p v-for="item in confirmed_data" v-bind:key="item.name">
+              <span style="color: #F44336; font-weight: bold">{{item.value}}</span> {{item.name}}
+            </p>
           </div>
         </div>
+      </div>
+    </v-navigation-drawer>
 
+    <v-content>
+      <div class="fill-height box">
         <div class="main">
           <Map/>
         </div>
@@ -61,6 +67,7 @@
         },
 
         data: () => ({
+            drawer: null,
             confirmed_data: confirmed_data
         }),
     };
@@ -73,6 +80,7 @@
     align-items: center;
     text-align: center;
     padding: 10px;
+    margin-bottom: 30px;
   }
 
   .sidebar {
@@ -83,6 +91,8 @@
     flex-grow: 0;
     justify-content: center;
     align-items: center;
+    padding: 8px;
+    text-align: center
   }
 
   .main {
@@ -101,6 +111,5 @@
     background-color: bisque;
     flex-grow: 1;
     overflow: scroll;
-    max-height: calc(180vh);
   }
 </style>

@@ -14,9 +14,9 @@
       <v-card-text class="white--text pt-0">
         Data Source: <a target="_blank" style='color:#ffffff'
                         href='https://i.snssdk.com/ugc/hotboard_fe/hot_list/template/hot_list/forum_tab.html'>
-        Bytedance News</a><br>
+        Bytedance News</a><br/>
         API Thanks: <a target="_blank" style='color:#ffffff' href='https://github.com/canghailan/Wuhan-2019-nCoV'>
-        canghailan/Wuhan-2019-nCoV</a><br>
+        canghailan/Wuhan-2019-nCoV</a><br/>
         Powered By <a target="_blank" style='color:#ffffff' href='https://vuejs.org'>Vue</a> &
         <a target="_blank" style='color:#ffffff' href='https://echarts.apache.org/en/index.html'>ECharts</a>
       </v-card-text>

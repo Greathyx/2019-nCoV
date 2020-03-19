@@ -68,17 +68,50 @@
             </a>
           </h1>
           <p class="text-justify">
-            1. We visualized the current data of new coronavirus break, we want to discuss
-            how severe the situation is and we also want to raise people's emphasis on this epidemic.
+            1. By visualizing the current data of the new coronavirus break, we want to discuss
+            how severe the situation is and to raise people's emphasis on this epidemic.
           </p>
           <p style="margin-top: -6px" class="text-justify">
             2. We collected news data about the
-            coronavirus epidemic, we want to rainse discussions about different actions to control
-            the epidemic and keep uses informed of the up-to-date information.
+            coronavirus epidemic to keep users informed of the up-to-date information
+            and to raise discussions about different actions to control the epidemic.
           </p>
           <p style="margin-top: -6px" class="text-justify">
-            3. We researched the epidemic model SEIR theory, we want to raise awareness that it is
-            important to do "something" to prevent the virus like wearing masks.
+            3. Via researching the epidemic model named SEIR, we hope to make people awared
+            that it is crucial to take preventions like wearing masks.
+          </p>
+          <p style="margin-top: -6px" class="text-justify">
+            * Data Source:
+            <a target="_blank" style="color: teal"
+               href='https://i.snssdk.com/ugc/hotboard_fe/hot_list/template/hot_list/forum_tab.html'>
+              Bytedance News
+              <i class="v-icon mdi mdi-open-in-new"
+                 style="font-size: 15px; vertical-align: baseline;"
+              />
+            </a>.<br/>
+            * API Thanks:
+            <a target="_blank" href='https://github.com/canghailan/Wuhan-2019-nCoV'
+               style="color: teal"
+            >
+              canghailan/Wuhan-2019-nCoV
+              <i class="v-icon mdi mdi-open-in-new"
+                 style="font-size: 15px; vertical-align: baseline;"
+              />
+            </a>.<br/>
+            * Powered By:
+            <a target="_blank" href='https://vuejs.org' style="color: teal">
+              Vue
+              <i class="v-icon mdi mdi-open-in-new"
+                 style="font-size: 15px; vertical-align: baseline;"
+              />
+            </a>
+            &
+            <a target="_blank" href='https://echarts.apache.org/en/index.html' style="color: teal">
+              ECharts
+              <i class="v-icon mdi mdi-open-in-new"
+                 style="font-size: 15px; vertical-align: baseline;"
+              />
+            </a>
           </p>
         </div>
         <div class="right2">
@@ -240,6 +273,11 @@
     margin-right: 60px;
   }
 
+  .left2 a {
+    text-decoration-line: none;
+    color: teal;
+  }
+
   .right2 {
     display: flex;
     justify-content: center;
@@ -250,7 +288,7 @@
   }
 
   .members_intro {
-    padding: 0 100px 100px 100px;
+    padding: 0 100px 90px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;

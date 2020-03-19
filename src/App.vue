@@ -3,6 +3,7 @@
     <v-app-bar
             app
             clipped-left
+            dark
     >
       <!--      <v-app-bar-nav-icon @click.stop="miniVariant = !miniVariant"></v-app-bar-nav-icon>-->
       <v-toolbar-title style="width: 240px">2019-nCoV Tracking</v-toolbar-title>
@@ -31,18 +32,22 @@
 
     <router-view/>
 
-    <Footer/>
+    <v-footer app dark>
+      <span>Copyright &copy; {{ new Date().getFullYear() }} <strong>CoronaVis</strong>.
+        All rights reserved.</span>
+    </v-footer>
+<!--    <Footer/>-->
   </v-app>
 </template>
 
 <script>
-    import Footer from "./components/Footer";
+    // import Footer from "./components/Footer";
 
     export default {
         name: 'App',
 
         components: {
-            Footer,
+            // Footer,
         },
 
         data: () => ({
