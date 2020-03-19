@@ -33,8 +33,10 @@
     <router-view/>
 
     <v-footer app dark>
-      <span>Copyright &copy; {{ new Date().getFullYear() }} <strong>CoronaVis</strong>.
-        All rights reserved.</span>
+      <span style="text-align: center; width: 100%">
+        Copyright &copy; {{ new Date().getFullYear() }} <strong>CoronaVis</strong>.
+        All rights reserved.
+      </span>
     </v-footer>
 <!--    <Footer/>-->
   </v-app>

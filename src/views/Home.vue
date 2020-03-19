@@ -7,15 +7,15 @@
     >
       <div class="fill-height sidebar">
         <div class="total" style="background-color: #FFCDD2;">
-          <h1>174,615</h1>
+          <h1>{{total_confirmed}}</h1>
           <h4>Total Confirmed</h4>
         </div>
         <div class="total" style="background-color: #E0E0E0">
-          <h1>6,513</h1>
+          <h1>{{total_deaths}}</h1>
           <h4>Total Deaths</h4>
         </div>
         <div class="total" style="background-color: #C8E6C9">
-          <h1>77,657</h1>
+          <h1>{{total_cured}}</h1>
           <h4>Total Recovered</h4>
         </div>
         <div class="countries">
@@ -36,24 +36,35 @@
         </div>
       </div>
     </v-content>
-
-
   </v-app>
 </template>
 
 <script>
     import Map from "../components/Map";
-    import data from '../data/overall';
+    import data from '../data/data.json';
     import {getName, CODE} from '../data/name'
 
+    // generate date of today
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
+    const yyyy = today.getFullYear();
+    const today_date = yyyy + '-' + mm + '-' + dd;
+
     let confirmed_data = [];
+    let total_confirmed = 0;
+    let total_cured = 0;
+    let total_deaths = 0;
     for (let code of CODE) {
-        let temp = data.filter(e => e.countryCode === code && e.date === '2020-03-09' && !e.province);
+        let temp = data.filter(e => e.countryCode === code && e.date === today_date && !e.province);
         temp.forEach(() => {
             confirmed_data.push({
                 name: getName(code),
                 value: temp[0].confirmed
-            })
+            });
+            total_confirmed += temp[0].confirmed;
+            total_cured += temp[0].cured;
+            total_deaths += temp[0].dead;
         });
         confirmed_data.sort((a, b) => {
             return b.value - a.value;
@@ -68,7 +79,10 @@
 
         data: () => ({
             drawer: null,
-            confirmed_data: confirmed_data
+            confirmed_data: confirmed_data,
+            total_confirmed: total_confirmed,
+            total_cured: total_cured,
+            total_deaths: total_deaths,
         }),
     };
 </script>

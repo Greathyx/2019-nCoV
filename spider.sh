@@ -10,6 +10,6 @@ do
     echo $current_date
     if echo $current_date | grep "23时59分59秒" ; then
         echo "new data is downloading"
-        curl "https://raw.githubusercontent.com/canghailan/Wuhan-2019-nCoV/master/Wuhan-2019-nCoV.json" >> "./src/data/overall.json" # 这里改成 overall.json 的路径，比如 './home/2019ncov/data/overall.json', 我不知道你放在主机的哪里
+        curl "https://raw.githubusercontent.com/canghailan/Wuhan-2019-nCoV/master/Wuhan-2019-nCoV.json" >> "./src/data/date.json" # 这里改成 date.json 的路径，比如 './home/2019ncov/data/date.json', 我不知道你放在主机的哪里
     fi
 done
