@@ -89,6 +89,15 @@ function getName(code) {
     }
 }
 
+function getCode(name){
+    let index = NAME.indexOf(name)
+    if(index>-1){
+        return CODE[index]
+    }else{
+        return null
+    }
+}
+
 export {
     CODE,
     getName,
@@ -96,5 +105,6 @@ export {
     getName2,
     getPinyin,
     getId,
-    getAbbr
+    getAbbr,
+    getCode
 }
