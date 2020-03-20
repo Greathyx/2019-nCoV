@@ -5,7 +5,7 @@ import worldMap from 'echarts/map/json/world.json'
 import data from './data.json'
 import {getName, CODE} from './name'
 
-export default function genMap(country) {
+export default function genMap() {
     const result = [];
 
     // generate date of today
@@ -43,6 +43,6 @@ export default function genMap(country) {
 
     //console.log(result)
 
-    mapData.map = mapConfig(country, result);
+    mapData.map = mapConfig(result);
     return mapData
 }

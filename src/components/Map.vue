@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <p>update time: {{updateTime}}</p>
+    <p style='postion: center'>update time: {{updateTime}}</p>
     <div style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center">
         <div style="display: flex; order: -1">
             <e-charts
@@ -12,15 +12,35 @@
             ></e-charts>
         </div>
         <div style="display: flex; flex-direction: column; width: 40%">
-            <e-charts
-                    ref='line'
-                    :options='chart'
+            <v-container>
+                <v-tabs>
+                    <v-tab @click='charttype=0'>Line Chart</v-tab>
+                    <v-tab @click='charttype=1'>Polar Stack</v-tab>
+                    <v-tab @click='charttype=2'>Another Chart</v-tab>
+                </v-tabs>
+            </v-container>
+            <div v-show='charttype===0'>
+                <e-charts
+                        ref='line'
+                        :options='chart'
+                        :initOptions='initOptions'
+                        autoresize
+                ></e-charts>
+            </div>
+            <div v-show='charttype===1'>
+                <e-charts
+                    ref='polar stack'
+                    :options='polarstack'
                     :initOptions='initOptions'
                     autoresize
-            ></e-charts>
+                ></e-charts>
+            </div>
+            <div v-show='charttype===2'>
+                <p>another chart</p>
+            </div>
             <div>
-                <v-btn style="margin-right: 15px" color='normal' @click='reset'>Reset</v-btn>
-                <v-btn sytle="margin-right: 15px" color='normal' @click='log'>{{LOGbtntext}}</v-btn>
+                <v-btn style="position:center" color='normal' @click='reset'>Reset</v-btn>
+                <v-btn sytle="position:center" color='normal' @click='log'>{{LOGbtntext}}</v-btn>
             </div>
         </div>
     </div>
@@ -28,12 +48,12 @@
 </template>
 
 <script>
-    import {getName} from '../data/name'
+    //import {getName} from '../data/name'
     import ECharts from '../components/ECharts.vue'
     import genMap from '../data/generateMap'
     import genChart from '../data/generateChart'
+    import genPolarstack from '../data/generatePolarstack'
     import 'echarts/theme/macarons' // 更改主题？还没实现
-    //import {countries} from './Global.vue' // 全局变量，用来储存图表使用的国家名
 
     export default {
         components: {
@@ -43,12 +63,13 @@
         data: () => ({
             data: [],
             places: [],
-            linechartType: 'value',
+            charttype: 0,
+            linechartType: 'value', // 暂时只对 line chart 有效
             LOGbtntext: 'log',
             updateTime: {},
             map: {},
             chart: {},
-            countryName: '',
+            polarstack: {},
             initOptions: {
                 renderer: 'canvas',
                 theme: 'macarons' // 更改主题？
@@ -63,10 +84,12 @@
             getClick: function(params){
                 this.places.push(params.name)
                 this.chart=genChart(this.places, this.linechartType)
+                this.polarstack = genPolarstack(this.places)
             },
             reset: function () {
                 this.places=[]
                 this.chart = genChart(this.places, this.linechartType)
+                this.polarstack = genPolarstack(this.places)
             },
             log: function(){
                 console.log(this.chart)
@@ -82,13 +105,11 @@
         },
 
         created() {
-            let country = this.$route.path.substr(1);
-            this.countryName = getName(country);
             const {
                 updateTime,
                 // total,
                 map
-            } = genMap(this.countryName);
+            } = genMap();
             this.updateTime = updateTime;
             this.map = map;
         }

@@ -1,4 +1,4 @@
-export default function mapConfig (province, data) {
+export default function mapConfig (data) {
     return {
       title: [{ // 后面再改成英文
         text: 'Current World-wide Confirmed Infection Situation',
@@ -47,7 +47,7 @@ export default function mapConfig (province, data) {
           position: 'inside',
           fontSize: 14
         },
-        mapType: province || 'world',
+        mapType: 'world',
         data: data,
         zoom: 1.2,
         roam: true,
