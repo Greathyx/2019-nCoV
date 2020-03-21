@@ -20,27 +20,31 @@
             width="400"
     >
       <div class="fill-height right_sidebar">
-        <e-charts
-                ref='line'
-                :options='chart'
-                :initOptions='initOptions'
-                autoresize
-                style="width: inherit; height: 300px"
-        ></e-charts>
-
-        <e-charts
-                ref='polar stack'
-                :options='polarstack'
-                :initOptions='initOptions'
-                autoresize
-                style="width: inherit; height: 300px"
-        ></e-charts>
-
-        <div>
+        <p>
+          Choose countries in the map to generate charts.
+        </p>
+        <div style="margin-bottom: 20px">
           <v-btn style="position:center; margin-right: 15px" color='normal' @click='reset'>
             Reset
           </v-btn>
-<!--          <v-btn sytle="position:center" color='normal' @click='log'>{{LOGbtntext}}</v-btn>-->
+          <v-btn sytle="position:center" color='normal' @click='log'>{{LOGbtntext}}</v-btn>
+        </div>
+        <div class="my_echarts">
+          <e-charts
+                  ref='line'
+                  :options='chart'
+                  :initOptions='initOptions'
+                  autoresize
+                  style="width: inherit; height: 300px"
+          ></e-charts>
+
+          <e-charts
+                  ref='polar stack'
+                  :options='polarstack'
+                  :initOptions='initOptions'
+                  autoresize
+                  style="width: inherit; height: 300px"
+          ></e-charts>
         </div>
       </div>
       <!--      </div>-->
@@ -111,7 +115,9 @@
         }),
 
         mounted() {
-            this.chart = genChart(this.place, 'value')
+            // this.chart = genChart(this.places, 'value');
+            this.chart = genChart(this.places, this.linechartType);
+            this.polarstack = genPolarstack(this.places);
         },
 
         methods: {
@@ -125,17 +131,17 @@
                 this.chart = genChart(this.places, this.linechartType);
                 this.polarstack = genPolarstack(this.places);
             },
-            // log: function () {
-            //     console.log(this.chart);
-            //     if (this.linechartType === 'value') {
-            //         this.linechartType = 'log';
-            //         this.LOGbtntext = 'unlog'
-            //     } else {
-            //         this.linechartType = 'value';
-            //         this.LOGbtntext = 'log'
-            //     }
-            //     // this.chart = genChart(this.places, this.linechartType)
-            // }
+            log: function () {
+                // console.log(this.chart);
+                if (this.linechartType === 'value') {
+                    this.linechartType = 'log';
+                    this.LOGbtntext = 'unlog'
+                } else {
+                    this.linechartType = 'value';
+                    this.LOGbtntext = 'log'
+                }
+                this.chart = genChart(this.places, this.linechartType)
+            }
         },
 
         created() {
@@ -154,13 +160,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    flex-basis: 400px;
-    min-width: 400px; /*确保当页面很小的时候，左侧变小*/
+    /*flex-basis: 400px;*/
     flex-grow: 0;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    text-align: center
+    text-align: center;
+    padding-top: 20px;
+    /*padding-bottom: 20px;*/
   }
 
   .map_chart {
@@ -169,5 +175,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .my_echarts {
+    width: 100%;
+    flex-grow: 1;
+    overflow: scroll;
   }
 </style>
