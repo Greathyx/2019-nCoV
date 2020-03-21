@@ -20,13 +20,13 @@
             width="400"
     >
       <div class="fill-height right_sidebar">
-        <e-charts
-                ref='line'
-                :options='chart'
-                :initOptions='initOptions'
-                autoresize
-                style="width: inherit; height: 300px"
-        ></e-charts>
+<!--        <e-charts-->
+<!--                ref='line'-->
+<!--                :options='chart'-->
+<!--                :initOptions='initOptions'-->
+<!--                autoresize-->
+<!--                style="width: inherit; height: 300px"-->
+<!--        ></e-charts>-->
 
 <!--        <e-charts-->
 <!--                ref='polar stack'-->
