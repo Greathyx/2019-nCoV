@@ -20,13 +20,13 @@
             width="400"
     >
       <div class="fill-height right_sidebar">
-        <e-charts
-                ref='line'
-                :options='chart'
-                :initOptions='initOptions'
-                autoresize
-                style="width: inherit; height: 300px"
-        ></e-charts>
+<!--        <e-charts-->
+<!--                ref='line'-->
+<!--                :options='chart'-->
+<!--                :initOptions='initOptions'-->
+<!--                autoresize-->
+<!--                style="width: inherit; height: 300px"-->
+<!--        ></e-charts>-->
 
 <!--        <e-charts-->
 <!--                ref='polar stack'-->
@@ -40,7 +40,7 @@
           <v-btn style="position:center; margin-right: 15px" color='normal' @click='reset'>
             Reset
           </v-btn>
-          <v-btn sytle="position:center" color='normal' @click='log'>{{LOGbtntext}}</v-btn>
+<!--          <v-btn sytle="position:center" color='normal' @click='log'>{{LOGbtntext}}</v-btn>-->
         </div>
       </div>
       <!--      </div>-->
@@ -84,7 +84,7 @@
     //import {getName} from '../data/name'
     import ECharts from '../components/ECharts.vue'
     import genMap from '../data/generateMap'
-    import genChart from '../data/generateChart'
+    // import genChart from '../data/generateChart'
     // import genPolarstack from '../data/generatePolarstack'
     import 'echarts/theme/macarons' // 更改主题？还没实现
 
@@ -117,25 +117,25 @@
         methods: {
             getClick: function (params) {
                 this.places.push(params.name);
-                this.chart = genChart(this.places, this.linechartType);
+                // this.chart = genChart(this.places, this.linechartType);
                 // this.polarstack = genPolarstack(this.places);
             },
             reset: function () {
                 this.places = [];
-                this.chart = genChart(this.places, this.linechartType);
+                // this.chart = genChart(this.places, this.linechartType);
                 // this.polarstack = genPolarstack(this.places);
             },
-            log: function () {
-                console.log(this.chart);
-                if (this.linechartType === 'value') {
-                    this.linechartType = 'log';
-                    this.LOGbtntext = 'unlog'
-                } else {
-                    this.linechartType = 'value';
-                    this.LOGbtntext = 'log'
-                }
-                this.chart = genChart(this.places, this.linechartType)
-            }
+            // log: function () {
+            //     console.log(this.chart);
+            //     if (this.linechartType === 'value') {
+            //         this.linechartType = 'log';
+            //         this.LOGbtntext = 'unlog'
+            //     } else {
+            //         this.linechartType = 'value';
+            //         this.LOGbtntext = 'log'
+            //     }
+            //     // this.chart = genChart(this.places, this.linechartType)
+            // }
         },
 
         created() {
