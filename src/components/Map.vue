@@ -20,13 +20,13 @@
             width="400"
     >
       <div class="fill-height right_sidebar">
-<!--        <e-charts-->
-<!--                ref='line'-->
-<!--                :options='chart'-->
-<!--                :initOptions='initOptions'-->
-<!--                autoresize-->
-<!--                style="width: inherit; height: 300px"-->
-<!--        ></e-charts>-->
+        <e-charts
+                ref='line'
+                :options='chart'
+                :initOptions='initOptions'
+                autoresize
+                style="width: inherit; height: 300px"
+        ></e-charts>
 
 <!--        <e-charts-->
 <!--                ref='polar stack'-->
@@ -85,7 +85,7 @@
     import ECharts from '../components/ECharts.vue'
     import genMap from '../data/generateMap'
     import genChart from '../data/generateChart'
-    import genPolarstack from '../data/generatePolarstack'
+    // import genPolarstack from '../data/generatePolarstack'
     import 'echarts/theme/macarons' // 更改主题？还没实现
 
     export default {
@@ -118,12 +118,12 @@
             getClick: function (params) {
                 this.places.push(params.name);
                 this.chart = genChart(this.places, this.linechartType);
-                this.polarstack = genPolarstack(this.places);
+                // this.polarstack = genPolarstack(this.places);
             },
             reset: function () {
                 this.places = [];
                 this.chart = genChart(this.places, this.linechartType);
-                this.polarstack = genPolarstack(this.places);
+                // this.polarstack = genPolarstack(this.places);
             },
             log: function () {
                 console.log(this.chart);
