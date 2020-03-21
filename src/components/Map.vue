@@ -28,13 +28,13 @@
                 style="width: inherit; height: 300px"
         ></e-charts>
 
-        <e-charts
-                ref='polar stack'
-                :options='polarstack'
-                :initOptions='initOptions'
-                autoresize
-                style="width: inherit; height: 300px"
-        ></e-charts>
+<!--        <e-charts-->
+<!--                ref='polar stack'-->
+<!--                :options='polarstack'-->
+<!--                :initOptions='initOptions'-->
+<!--                autoresize-->
+<!--                style="width: inherit; height: 300px"-->
+<!--        ></e-charts>-->
 
         <div>
           <v-btn style="position:center; margin-right: 15px" color='normal' @click='reset'>
