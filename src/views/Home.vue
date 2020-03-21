@@ -16,7 +16,7 @@
         </div>
         <div class="total" style="background-color: #C8E6C9">
           <h1>{{total_cured}}</h1>
-          <h4>Total Recovered</h4>
+          <h4>Total Cured</h4>
         </div>
         <div class="countries">
           <h5 style="margin: 10px auto">Confirmed Cases by Country</h5>
@@ -31,9 +31,7 @@
 
     <v-content>
       <div class="fill-height box">
-        <div class="main">
-          <Map/>
-        </div>
+        <Map/>
       </div>
     </v-content>
   </v-app>
@@ -107,10 +105,6 @@
     align-items: center;
     padding: 8px;
     text-align: center
-  }
-
-  .main {
-    flex-grow: 1;
   }
 
   .total {

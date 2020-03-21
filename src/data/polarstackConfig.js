@@ -1,6 +1,10 @@
 // 极坐标堆叠图的图表设置
 export default function polarstackConfig (countryNames, confirmed, cured, death) {
     return {
+        title: [{
+            text: 'Confirmed, Deaths & Cured Situation',
+            left: 'center'
+        }],
         angleAxis: {
             type: 'category',
             data: countryNames

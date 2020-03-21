@@ -3,6 +3,7 @@
     <v-app-bar
             app
             clipped-left
+            clipped-right
             dark
     >
       <!--      <v-app-bar-nav-icon @click.stop="miniVariant = !miniVariant"></v-app-bar-nav-icon>-->

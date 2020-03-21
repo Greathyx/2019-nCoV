@@ -1,70 +1,62 @@
-export default function chartConfig (xAxis, cNames, res) {
+export default function chartConfig(xAxis, cNames, res) {
     return {
-        title: [{ // 后面再改成英文
-        text: 'Coronavirus Confirmed Trends in the Last 30 Days',
-        left:'center'
+        title: [{
+            text: 'Confirmed Trends in Last 30 Days',
+            left: 'center'
         }],
         tooltip: {
-            show:true,
+            show: true,
             trigger: 'axis',
-            axisPointer:{
+            axisPointer: {
                 type: 'cross',
             }
         },
-        legend:{
+        legend: {
             data: cNames,
-            right:'top',
-            top:'5%'
+            right: 'top',
+            top: '8%'
         },
-        xAxis:[{
+        xAxis: [{
             type: 'category',
             name: 'Date',
             data: xAxis
         }],
-        yAxis:[{
+        yAxis: [{
             type: 'value',
             name: 'Confirmed'
         }],
-        series:[{
-            name:cNames[0],
-            type:'line',
-            data:res[0]
-        },
-        {
-            name:cNames[1],
-            type:'line',
-            data:res[1]
-        },
-        {
-            name:cNames[2],
-            type:'line',
-            data:res[2]
-        },
-        {
-            name:cNames[3],
-            type:'line',
-            data:res[3]
-        },
-        {
-            name:cNames[4],
-            type:'line',
-            data:res[4]
-        },
-        {
-            name:cNames[5],
-            type:'line',
-            data:res[5]
-        },
-        {
-            name:cNames[6],
-            type:'line',
-            data:res[6]
-        },
-        {
-            name:cNames[7],
-            type:'line',
-            data:res[7]
-        }, 
-    ]
+        series: [{
+            name: cNames[0],
+            type: 'line',
+            data: res[0]
+        }, {
+            name: cNames[1],
+            type: 'line',
+            data: res[1]
+        }, {
+            name: cNames[2],
+            type: 'line',
+            data: res[2]
+        }, {
+            name: cNames[3],
+            type: 'line',
+            data: res[3]
+        }, {
+            name: cNames[4],
+            type: 'line',
+            data: res[4]
+        }, {
+            name: cNames[5],
+            type: 'line',
+            data: res[5]
+        }, {
+            name: cNames[6],
+            type: 'line',
+            data: res[6]
+        }, {
+            name: cNames[7],
+            type: 'line',
+            data: res[7]
+        }]
     }
 }
