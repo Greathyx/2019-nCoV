@@ -28,13 +28,13 @@
                 style="width: inherit; height: 300px"
         ></e-charts>
 
-<!--        <e-charts-->
-<!--                ref='polar stack'-->
-<!--                :options='polarstack'-->
-<!--                :initOptions='initOptions'-->
-<!--                autoresize-->
-<!--                style="width: inherit; height: 300px"-->
-<!--        ></e-charts>-->
+        <e-charts
+                ref='polar stack'
+                :options='polarstack'
+                :initOptions='initOptions'
+                autoresize
+                style="width: inherit; height: 300px"
+        ></e-charts>
 
         <div>
           <v-btn style="position:center; margin-right: 15px" color='normal' @click='reset'>
@@ -85,7 +85,7 @@
     import ECharts from '../components/ECharts.vue'
     import genMap from '../data/generateMap'
     import genChart from '../data/generateChart'
-    // import genPolarstack from '../data/generatePolarstack'
+    import genPolarstack from '../data/generatePolarstack'
     import 'echarts/theme/macarons' // 更改主题？还没实现
 
     export default {
@@ -118,12 +118,12 @@
             getClick: function (params) {
                 this.places.push(params.name);
                 this.chart = genChart(this.places, this.linechartType);
-                // this.polarstack = genPolarstack(this.places);
+                this.polarstack = genPolarstack(this.places);
             },
             reset: function () {
                 this.places = [];
                 this.chart = genChart(this.places, this.linechartType);
-                // this.polarstack = genPolarstack(this.places);
+                this.polarstack = genPolarstack(this.places);
             },
             // log: function () {
             //     console.log(this.chart);
