@@ -1,7 +1,7 @@
 <script>
 //全局变量
 
-const countries=[]
+const countries=[];
 
 export default
 {

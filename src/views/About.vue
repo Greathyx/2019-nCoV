@@ -2,8 +2,8 @@
   <v-content>
     <v-parallax
             dark
-            height="calc(95vh)"
-            src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+            height="calc(90vh)"
+            :src="require('../assets/material2.jpg')"
             class="my-parallax"
     >
       <v-row
@@ -230,7 +230,7 @@
 
 <style>
   .my-parallax {
-    height: calc(95vh);
+    height: calc(90vh);
   }
 
   .video {
@@ -238,8 +238,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(95vh);
-    background: linear-gradient(teal, #C8E6C9);
+    height: calc(90vh);
+    background: linear-gradient(teal, #E0F2F1);
   }
 
   .background {

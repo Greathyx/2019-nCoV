@@ -23,74 +23,64 @@
         <p>
           Choose countries in the map to generate charts.
         </p>
-        <div style="margin-bottom: 20px">
-          <v-btn style="position:center; margin-right: 15px" color='normal' @click='reset'>
-            Reset
-          </v-btn>
-          <v-btn sytle="position:center" color='normal' @click='log'>{{LOGbtntext}}</v-btn>
+        <div style="width: 100%">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn dark v-on="on"
+                     style="position:center; margin-right: 15px"
+                     color='normal'
+                     @click='reset'
+              >
+                Reset
+              </v-btn>
+            </template>
+            <span>deselect all countries</span>
+          </v-tooltip>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn dark v-on="on"
+                     style="position:center"
+                     color='normal'
+                     @click='log'
+              >
+                {{LOGbtntext}}
+              </v-btn>
+            </template>
+            <span>{{LOGbtntext === "unlog" ? "switch normal value" : "switch logarithm (10 based)"}}</span>
+          </v-tooltip>
+
+          <v-divider style="margin-top: 20px; margin-right: 30px; margin-left: 30px"/>
         </div>
+
         <div class="my_echarts">
           <e-charts
                   ref='line'
                   :options='chart'
                   :initOptions='initOptions'
                   autoresize
-                  style="width: inherit; height: 300px"
-          ></e-charts>
+                  style="width: inherit; height: 320px"
+          />
+
+          <v-divider style="margin: 10px 30px"/>
 
           <e-charts
                   ref='polar stack'
                   :options='polarstack'
                   :initOptions='initOptions'
                   autoresize
-                  style="width: inherit; height: 300px"
-          ></e-charts>
+                  style="width: inherit; height: 360px"
+          />
         </div>
       </div>
-      <!--      </div>-->
     </v-navigation-drawer>
-    <!--        <div style="display: flex; flex-direction: column; width: 40%">-->
-    <!--            <v-container>-->
-    <!--                <v-tabs>-->
-    <!--                    <v-tab @click='charttype=0'>Line Chart</v-tab>-->
-    <!--                    <v-tab @click='charttype=1'>Polar Stack</v-tab>-->
-    <!--                    <v-tab @click='charttype=2'>Another Chart</v-tab>-->
-    <!--                </v-tabs>-->
-    <!--            </v-container>-->
-    <!--            <div v-show='charttype===0'>-->
-    <!--                <e-charts-->
-    <!--                        ref='line'-->
-    <!--                        :options='chart'-->
-    <!--                        :initOptions='initOptions'-->
-    <!--                        autoresize-->
-    <!--                ></e-charts>-->
-    <!--            </div>-->
-    <!--            <div v-show='charttype===1'>-->
-    <!--                <e-charts-->
-    <!--                    ref='polar stack'-->
-    <!--                    :options='polarstack'-->
-    <!--                    :initOptions='initOptions'-->
-    <!--                    autoresize-->
-    <!--                ></e-charts>-->
-    <!--            </div>-->
-    <!--            <div v-show='charttype===2'>-->
-    <!--                <p>another chart</p>-->
-    <!--            </div>-->
-    <!--            <div>-->
-    <!--                <v-btn style="position:center" color='normal' @click='reset'>Reset</v-btn>-->
-    <!--                <v-btn sytle="position:center" color='normal' @click='log'>{{LOGbtntext}}</v-btn>-->
-    <!--            </div>-->
-    <!--        </div>-->
   </figure>
 </template>
 
 <script>
-    //import {getName} from '../data/name'
     import ECharts from '../components/ECharts.vue'
-    import genMap from '../data/generateMap'
-    import genChart from '../data/generateChart'
-    import genPolarstack from '../data/generatePolarstack'
-    import 'echarts/theme/macarons' // 更改主题？还没实现
+    import {genMap, genChart, genPolarStack} from '../data/generateECharts';
+    import macarons from 'echarts/theme/macarons' // 更改主题？还没实现
 
     export default {
         components: {
@@ -101,8 +91,7 @@
             drawer: null,
             data: [],
             places: [],
-            charttype: 0,
-            linechartType: 'value', // 暂时只对 line chart 有效
+            chartType: 'value', // 暂时只对 line chart 有效
             LOGbtntext: 'log',
             updateTime: {},
             map: {},
@@ -110,37 +99,41 @@
             polarstack: {},
             initOptions: {
                 renderer: 'canvas',
-                theme: 'macarons' // 更改主题？
+                theme: macarons // 更改主题？
             }
         }),
 
         mounted() {
-            // this.chart = genChart(this.places, 'value');
-            this.chart = genChart(this.places, this.linechartType);
-            this.polarstack = genPolarstack(this.places);
+            this.chart = genChart(this.places, this.chartType);
+            this.polarstack = genPolarStack(this.places, this.chartType);
         },
 
         methods: {
             getClick: function (params) {
-                this.places.push(params.name);
-                this.chart = genChart(this.places, this.linechartType);
-                this.polarstack = genPolarstack(this.places);
+                const index = this.places.indexOf(params.name);
+                if (index > -1) {
+                    this.places.splice(index, 1);
+                } else {
+                    this.places.push(params.name);
+                }
+                this.chart = genChart(this.places, this.chartType);
+                this.polarstack = genPolarStack(this.places, this.chartType);
             },
             reset: function () {
                 this.places = [];
-                this.chart = genChart(this.places, this.linechartType);
-                this.polarstack = genPolarstack(this.places);
+                this.chart = genChart(this.places, this.chartType);
+                this.polarstack = genPolarStack(this.places, this.chartType);
             },
             log: function () {
-                // console.log(this.chart);
-                if (this.linechartType === 'value') {
-                    this.linechartType = 'log';
+                if (this.chartType === 'value') {
+                    this.chartType = 'log';
                     this.LOGbtntext = 'unlog'
                 } else {
-                    this.linechartType = 'value';
+                    this.chartType = 'value';
                     this.LOGbtntext = 'log'
                 }
-                this.chart = genChart(this.places, this.linechartType)
+                this.chart = genChart(this.places, this.chartType);
+                this.polarstack = genPolarStack(this.places, this.chartType);
             }
         },
 
@@ -181,5 +174,7 @@
     width: 100%;
     flex-grow: 1;
     overflow: scroll;
+    padding-top: 10px;
+    padding-bottom: 20px;
   }
 </style>
