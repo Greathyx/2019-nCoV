@@ -5,7 +5,7 @@
             :options='options'
             :init-options='initOptions'
             autoresize
-            style="width: 90%; margin: -10px auto 0 auto;"
+            style="width: 90%; margin: 0 auto;"
             class="fill-height"
     />
   </v-content>
