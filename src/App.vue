@@ -13,6 +13,9 @@
           <router-link to="/" class="link">Home</router-link>
         </v-tab>
         <v-tab>
+          <router-link to="/discovery_process" class="link">Discovery Process</router-link>
+        </v-tab>
+        <v-tab>
           <router-link to="/news" class="link">News</router-link>
         </v-tab>
         <v-tab>

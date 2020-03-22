@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import map from 'echarts/lib/chart/map'
+import china from 'echarts/map/js/china'
 import visualMap from 'echarts/lib/component/visualMap'
 import title from 'echarts/lib/component/title'
 import line from 'echarts/lib/chart/line'
@@ -12,6 +13,7 @@ Vue.use(map,visualMap, title, line, legend, tooltip);
 
 export default {
     map,
+    china,
     visualMap,
     title,
     line,
