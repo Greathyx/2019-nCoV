@@ -413,7 +413,9 @@ function mapDiscoveryConfig(days, sum) {
                 gridIndex: 1
             }],
             geo: {
-                map: 'china',
+                map: 'world',
+                zoom: 1.2,
+                roam: true,
                 right: '35%',
                 left: '5%',
                 label: {
