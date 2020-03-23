@@ -279,38 +279,34 @@ function mapDiscoveryConfig(days, sum) {
             },
             visualMap: {
                 type: 'piecewise',
-                pieces: [{
-                    min: 1001,
-                    color: '#73240D'
-                },
+                pieces: [
                     {
-                        min: 501,
-                        max: 1000,
+                        min: 9999,
                         color: '#BB0000'
                     },
                     {
-                        min: 251,
-                        max: 500,
+                        min: 1000,
+                        max: 9999,
                         color: '#BD430A'
                     },
                     {
-                        min: 101,
-                        max: 250,
+                        min: 500,
+                        max: 999,
                         color: '#E08150'
                     },
                     {
-                        min: 11,
-                        max: 100,
+                        min: 100,
+                        max: 499,
                         color: '#E9B090'
                     },
                     {
-                        min: 1,
-                        max: 10,
+                        min: 10,
+                        max: 99,
                         color: '#F2DDD2'
                     },
                     {
-                        value: 0,
-                        color: 'white'
+                        max: 9,
+                        color: '#FFFFFF'
                     }
                 ],
                 orient: 'vertical',
@@ -342,7 +338,7 @@ function mapDiscoveryConfig(days, sum) {
                 }],
             xAxis: [{
                 min: 0,
-                max: 4000,
+                max: 50000,
                 show: false
             }, {
                 data: days,
@@ -380,7 +376,7 @@ function mapDiscoveryConfig(days, sum) {
                     }
                 },
             }, {
-                name: '人数',
+                name: 'Confirmed',
                 inverse: false,
                 offset: '2',
                 'type': 'category',
@@ -472,7 +468,7 @@ function chartDiscoveryConfig(days_n, sum_n, res, res1, res2) {
     return {
         backgroundColor: '#E0F2F1',
         title: [{
-            text: days_n + '新型冠状病毒全国确诊感染人数' + sum_n,
+            text: days_n + ' Confirmed Infections Worldwide: ' + sum_n,
             textStyle: {
                 color: '#2D3E53',
                 fontSize: 28
@@ -482,7 +478,7 @@ function chartDiscoveryConfig(days_n, sum_n, res, res1, res2) {
         },
             {
                 show: true,
-                text: '感染人数前十的省份',
+                text: 'Top Ten Countries Infected',
                 textStyle: {
                     color: '#2D3E53',
                     fontSize: 18

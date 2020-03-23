@@ -12,7 +12,12 @@ const today = new Date();
 const dd = String(today.getDate()).padStart(2, '0');
 const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
 const yyyy = today.getFullYear();
-const today_date = yyyy + '-' + mm + '-' + dd;
+// 在北京时间 12 点前用前一天的数据替代当天数据
+if(today.getHours()<5){
+    var today_date=yyyy+'-'+mm+'-'+(dd-1)
+}else{
+    today_date = yyyy + '-' + mm + '-' + dd;
+}
 
 
 function genMap() {
@@ -139,11 +144,17 @@ function genMapDiscovery() {
         countries.push(getName(code))
     }
 
-    const days = ['01-20', '01-21', '01-22', '01-23', '01-24', '01-25', '01-26', '01-27', '01-28', '01-29', '01-30', ];
+    var days = ['01-20', '01-27', '02-03', '02-10', '02-17', '02-24', '03-02', '03-09', '03-16', '03-23', '03-30', '04-06'];
 
     const dataset=[]
 
     for(var i=0; i<days.length; i++){
+        // 在当前日期之后则 break
+        var tdate=new Date(yyyy+'-'+days[i])
+        if(tdate.getTime()>today.getTime()){
+            days=days.slice(0, i)
+            break
+        }else{
         dataset[i]=[]
         for(code of CODE){
             var temp = data.filter(e => e.countryCode === code && !e.province && e.date === yyyy+'-'+days[i])
@@ -153,6 +164,7 @@ function genMapDiscovery() {
                 dataset[i].push(temp[0].confirmed)
             }
         }
+    }
     }
 
     let sum = [];
