@@ -490,6 +490,9 @@ function chartDiscoveryConfig(days_n, sum_n, res, res1, res2) {
         yAxis: {
             data: res1,
         },
+        tooltip: {
+            formatter: '{b}\n{c}'
+        },
         series: [{
             type: 'map',
             data: res
