@@ -72,12 +72,16 @@
             how severe the situation is and to raise people's emphasis on this epidemic.
           </p>
           <p style="margin-top: -6px" class="text-justify">
-            2. We collected news data about the
+            2. We built a dynamic map with a timeline to demonstrate how situation got more and
+            more severe in the last several months.
+          </p>
+          <p style="margin-top: -6px" class="text-justify">
+            3. We collected news data about the
             coronavirus epidemic to keep users informed of the up-to-date information
             and to raise discussions about different actions to control the epidemic.
           </p>
           <p style="margin-top: -6px" class="text-justify">
-            3. Via researching the epidemic model named SEIR, we hope to make people awared
+            4. Via researching the epidemic model named SEIR, we hope to make people awared
             that it is crucial to take preventions like wearing masks.
           </p>
           <p style="margin-top: -6px" class="text-justify">
@@ -117,20 +121,24 @@
         <div class="right2">
           <v-carousel
                   cycle
-                  width="715" height="390"
+                  width="700" height="440"
                   hide-delimiters
           >
             <v-carousel-item
-                    width="715" height="390"
+                    width="700" height="440"
                     :src="require('../assets/about0.png')"
             ></v-carousel-item>
             <v-carousel-item
-                    width="715" height="390"
+                    width="700" height="440"
                     :src="require('../assets/about1.png')"
             ></v-carousel-item>
             <v-carousel-item
-                    width="715" height="390"
+                    width="700" height="440"
                     :src="require('../assets/about2.png')"
+            ></v-carousel-item>
+            <v-carousel-item
+                    width="700" height="440"
+                    :src="require('../assets/about3.png')"
             ></v-carousel-item>
           </v-carousel>
         </div>
@@ -212,7 +220,6 @@
                 • research the SEIR theory and build it<br/>
                 • carry out evaluation tests<br/>
                 • make the demo video<br/>
-                • design the view<br/>
               </v-card-subtitle>
             </v-card>
           </v-col>
