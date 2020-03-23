@@ -325,17 +325,17 @@ function mapDiscoveryConfig(days, sum) {
             grid: [
                 // bar chart
                 {
-                    right: '5%',
+                    right: '4%',
                     top: '36%',
                     bottom: '9%',
-                    width: '22%'
+                    width: '20%'
                 },
                 // line chart
                 {
-                    right: '3%',
+                    right: '1%',
                     top: '10%',
                     bottom: '75%',
-                    width: '25%'
+                    width: '23%'
                 }],
             xAxis: [{
                 min: 0,
