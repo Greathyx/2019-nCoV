@@ -1,7 +1,9 @@
 // Use data from JinRiTouTiao
 import ECharts from '../components/ECharts.vue'
-import {mapConfig, chartConfig, chartConfigLog, polarStackConfig,
-    mapDiscoveryConfig, chartDiscoveryConfig} from './eChartsConfig';
+import {
+    mapConfig, chartConfig, chartConfigLog, polarStackConfig,
+    mapDiscoveryConfig, chartDiscoveryConfig
+} from './eChartsConfig';
 import worldMap from 'echarts/map/json/world.json'
 import data from './data.json'
 import {getName, CODE, getCode} from './name'
@@ -14,9 +16,9 @@ const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
 const yyyy = today.getFullYear();
 // 在北京时间 12 点前用前一天的数据替代当天数据
 // 大概还有更好的写法吧比如比较 data.json 的 md5 ……
-if(today.getHours()<5){
-    var today_date=yyyy+'-'+mm+'-'+(dd-1)
-}else{
+if (today.getHours() < 5) {
+    var today_date = yyyy + '-' + mm + '-' + (dd - 1)
+} else {
     today_date = yyyy + '-' + mm + '-' + dd;
 }
 
@@ -139,33 +141,33 @@ function genMapDiscovery() {
     // 首先要注册世界地图
     ECharts.registerMap('world', worldMap);
 
-    const countries=[]
-    
-    for(var code of CODE){
+    const countries = [];
+
+    for (var code of CODE) {
         countries.push(getName(code))
     }
 
-    var days = ['01-20', '01-27', '02-03', '02-10', '02-17', '02-24', '03-02', '03-09', '03-16', '03-23', '03-30', '04-06'];
+    let days = ['01-20', '01-27', '02-03', '02-10', '02-17', '02-24', '03-02', '03-09', '03-16', '03-23', '03-30', '04-06'];
 
-    const dataset=[]
+    const dataset = [];
 
-    for(var i=0; i<days.length; i++){
+    for (let i = 0; i < days.length; i++) {
         // 在当前日期之后则 break
-        var tdate=new Date(yyyy+'-'+days[i])
-        if(tdate.getTime()>today.getTime()){
-            days=days.slice(0, i)
+        let tdate = new Date(yyyy + '-' + days[i]);
+        if (tdate.getTime() > today.getTime()) {
+            days = days.slice(0, i);
             break
-        }else{
-        dataset[i]=[]
-        for(code of CODE){
-            var temp = data.filter(e => e.countryCode === code && !e.province && e.date === yyyy+'-'+days[i])
-            if(temp.length==0){
-                dataset[i].push(0)
-            }else{
-                dataset[i].push(temp[0].confirmed)
+        } else {
+            dataset[i] = [];
+            for (code of CODE) {
+                let temp = data.filter(e => e.countryCode === code && !e.province && e.date === yyyy + '-' + days[i])
+                if (temp.length === 0) {
+                    dataset[i].push(0)
+                } else {
+                    dataset[i].push(temp[0].confirmed)
+                }
             }
         }
-    }
     }
 
     let sum = [];
@@ -191,11 +193,11 @@ function genMapDiscovery() {
                 value: dataset[n][j]
             });
         }
-        res.sort(function(a, b) {
+        res.sort(function (a, b) {
             return b.value - a.value;
         }).slice(0, 6);
 
-        res.sort(function(a, b) {
+        res.sort(function (a, b) {
             return a.value - b.value;
         });
         let res1 = [];

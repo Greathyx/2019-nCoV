@@ -31,11 +31,11 @@ function mapConfig(data) {
             },
             pieces: [
                 {min: 10000},
-                {min: 1000, max: 9999},
-                {min: 500, max: 999},
-                {min: 100, max: 499},
-                {min: 10, max: 99},
-                {max: 9}
+                {min: 1000, max: 10000},
+                {min: 500, max: 1000},
+                {min: 100, max: 500},
+                {min: 10, max: 100},
+                {max: 10}
             ],
             orient: 'vertical'
         }],
@@ -281,31 +281,32 @@ function mapDiscoveryConfig(days, sum) {
                 type: 'piecewise',
                 pieces: [
                     {
-                        min: 9999,
+                        min: 10000,
                         color: '#BB0000'
                     },
                     {
                         min: 1000,
-                        max: 9999,
+                        max: 10000,
                         color: '#BD430A'
                     },
                     {
                         min: 500,
-                        max: 999,
+                        max: 1000,
                         color: '#E08150'
                     },
                     {
                         min: 100,
-                        max: 499,
+                        max: 500,
                         color: '#E9B090'
                     },
                     {
                         min: 10,
-                        max: 99,
+                        max: 100,
                         color: '#F2DDD2'
                     },
                     {
-                        max: 9,
+                        min: 0,
+                        max: 10,
                         color: '#FFFFFF'
                     }
                 ],

@@ -14,8 +14,8 @@
     import debounce from 'lodash/debounce'
     import {addListener, removeListener} from 'resize-detector'
 
-    const INIT_TRIGGERS = ['theme', 'initOptions', 'autoresize']
-    const REWATCH_TRIGGERS = ['manualUpdate', 'watchShallow']
+    const INIT_TRIGGERS = ['theme', 'initOptions', 'autoresize'];
+    const REWATCH_TRIGGERS = ['manualUpdate', 'watchShallow'];
 
     export default {
         props: {
@@ -107,32 +107,32 @@
                 if (this.chart) {
                     return
                 }
-                const chart = echarts.init(this.$el, this.theme, this.initOptions)
+                const chart = echarts.init(this.$el, this.theme, this.initOptions);
 
                 if (this.group) {
                     chart.group = this.group
                 }
 
-                chart.setOption(options || this.manualOptions || this.options || {}, true)
+                chart.setOption(options || this.manualOptions || this.options || {}, true);
 
                 Object.keys(this.$listeners).forEach(event => {
-                    const handler = this.$listeners[event]
+                    const handler = this.$listeners[event];
 
                     if (event.indexOf('zr:') === 0) {
                         chart.getZr().on(event.slice(3), handler)
                     } else {
                         chart.on(event, handler)
                     }
-                })
+                });
 
                 if (this.autoresize) {
-                    this.lastArea = this.getArea()
+                    this.lastArea = this.getArea();
                     this.__resizeHandler = debounce(
                         () => {
                             if (this.lastArea === 0) {
                                 // emulate initial render for initially hidden charts
-                                this.mergeOptions({}, true)
-                                this.resize()
+                                this.mergeOptions({}, true);
+                                this.resize();
                                 this.mergeOptions(this.options || this.manualOptions || {}, true)
                             } else {
                                 this.resize()
@@ -141,7 +141,7 @@
                         },
                         100,
                         {leading: true}
-                    )
+                    );
                     addListener(this.$el, this.__resizeHandler)
                 }
 
@@ -179,7 +179,7 @@
             },
             initOptionsWatcher() {
                 if (this.__unwatchOptions) {
-                    this.__unwatchOptions()
+                    this.__unwatchOptions();
                     this.__unwatchOptions = null
                 }
 
@@ -208,18 +208,18 @@
                 if (this.autoresize) {
                     removeListener(this.$el, this.__resizeHandler)
                 }
-                this.dispose()
+                this.dispose();
                 this.chart = null
             },
             refresh() {
                 if (this.chart) {
-                    this.destroy()
+                    this.destroy();
                     this.init()
                 }
             }
         },
         created() {
-            this.initOptionsWatcher()
+            this.initOptionsWatcher();
 
             INIT_TRIGGERS.forEach(prop => {
                 this.$watch(
@@ -229,11 +229,11 @@
                     },
                     {deep: true}
                 )
-            })
+            });
 
             REWATCH_TRIGGERS.forEach(prop => {
                 this.$watch(prop, () => {
-                    this.initOptionsWatcher()
+                    this.initOptionsWatcher();
                     this.refresh()
                 })
             })
