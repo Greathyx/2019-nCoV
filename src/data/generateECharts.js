@@ -112,13 +112,13 @@ function genPolarStack(places, type) {
         let temp = data.filter(e => e.countryCode === code && !e.province && e.date === today_date);
         cured.push(temp[0].cured);
         death.push(temp[0].dead);
-        confirmed.push(temp[0].confirmed);
-        // let t = temp[0].confirmed - cured.slice(-1) - death.slice(-1);
-        // confirmed.push(t) // 因为是剩下的 confirmed
+        // confirmed.push(temp[0].confirmed);
+        let t = temp[0].confirmed - cured.slice(-1) - death.slice(-1);
+        confirmed.push(t); // 因为是剩下的 confirmed
 
         cured_log.push(getTenBaseLog(temp[0].cured).toFixed(2));
         death_log.push(getTenBaseLog(temp[0].dead).toFixed(2));
-        confirmed_log.push(getTenBaseLog(temp[0].confirmed).toFixed(2));
+        confirmed_log.push(getTenBaseLog(t).toFixed(2));
     }
 
     if (type === 'log') {
