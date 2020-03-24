@@ -228,9 +228,9 @@ function polarStackConfig(countryNames, confirmed, cured, death) {
         series: [
             {
                 type: 'bar',
-                data: death,
+                data: confirmed,
                 coordinateSystem: 'polar',
-                name: 'death',
+                name: 'confirmed',
                 stack: 'a'
             }, {
                 type: 'bar',
@@ -240,9 +240,56 @@ function polarStackConfig(countryNames, confirmed, cured, death) {
                 stack: 'a'
             }, {
                 type: 'bar',
+                data: death,
+                coordinateSystem: 'polar',
+                name: 'death',
+                stack: 'a'
+            }],
+        legend: {
+            show: true,
+            data: ['confirmed', 'cured', 'death'],
+            bottom: '0%'
+        }
+    }
+}
+
+function polarStackConfigLog(countryNames, confirmed, cured, death) {
+    return {
+        title: {
+            text: 'Confirmed, Deaths & Cured Situation',
+            left: 'center',
+        },
+        angleAxis: {
+            type: 'category',
+            data: countryNames
+        },
+        radiusAxis: {
+            type: 'log',
+            logBase: 10
+        },
+        polar: {},
+        tooltip: {},
+        series: [
+            {
+                type: 'bar',
                 data: confirmed,
+                // color: 'red',
                 coordinateSystem: 'polar',
                 name: 'confirmed',
+                stack: 'a'
+            }, {
+                type: 'bar',
+                data: cured,
+                // color: 'green',
+                coordinateSystem: 'polar',
+                name: 'cured',
+                stack: 'a'
+            }, {
+                type: 'bar',
+                data: death,
+                // color: 'grey',
+                coordinateSystem: 'polar',
+                name: 'death',
                 stack: 'a'
             }],
         legend: {
@@ -492,7 +539,7 @@ function chartDiscoveryConfig(days_n, sum_n, res, res1, res2) {
             data: res1,
         },
         tooltip: {
-            formatter: '{b}\n{c}'
+            formatter: '{b}:\n{c}'
         },
         series: [{
             type: 'map',
@@ -535,11 +582,203 @@ function chartDiscoveryConfig(days_n, sum_n, res, res1, res2) {
     }
 }
 
+function pictorialBarConfig(countryNames, cured_rate, death_rate) {
+    let spirit = 'path://M18.2629891,11.7131596 L6.8091608,11.7131596 C1.6685112,11.7131596 0,13.032145 0,18.6237673 L0,34.9928467 C0,38.1719847 4.28388932,38.1719847 4.28388932,34.9928467 L4.65591984,20.0216948 L5.74941883,20.0216948 L5.74941883,61.000787 C5.74941883,65.2508314 11.5891201,65.1268798 11.5891201,61.000787 L11.9611506,37.2137775 L13.1110872,37.2137775 L13.4831177,61.000787 C13.4831177,65.1268798 19.3114787,65.2508314 19.3114787,61.000787 L19.3114787,20.0216948 L20.4162301,20.0216948 L20.7882606,34.9928467 C20.7882606,38.1719847 25.0721499,38.1719847 25.0721499,34.9928467 L25.0721499,18.6237673 C25.0721499,13.032145 23.4038145,11.7131596 18.2629891,11.7131596 M12.5361629,1.11022302e-13 C15.4784742,1.11022302e-13 17.8684539,2.38997966 17.8684539,5.33237894 C17.8684539,8.27469031 15.4784742,10.66467 12.5361629,10.66467 C9.59376358,10.66467 7.20378392,8.27469031 7.20378392,5.33237894 C7.20378392,2.38997966 9.59376358,1.11022302e-13 12.5361629,1.11022302e-13';
+    let maxData;
+
+    let max_rate = Math.max(Math.max(...cured_rate), Math.max(...death_rate));
+    if (max_rate >= 0 && max_rate < 0.01) {
+        maxData = 0.01;
+    }
+    else if (max_rate >= 0.01 && max_rate < 0.05) {
+        maxData = 0.05;
+    }
+    else if (max_rate >= 0.05 && max_rate < 0.1) {
+        maxData = 0.1;
+    }
+    else if (max_rate >= 0.1 && max_rate < 0.5) {
+        maxData = 0.5;
+    }
+    else {
+        maxData = 1;
+    }
+
+    return {
+        title: [{
+            text: 'Cured & Death Rate for Different Countries',
+            left: 'center'
+        }],
+        legend: {
+            data: ['death', 'cured'],
+            top: 30
+        },
+        // tooltip: {
+        //     trigger: 'axis',
+        //     axisPointer: {
+        //         type: 'shadow'
+        //     },
+        //     formatter: 'cured:{c}%\n death:\n{e}%'
+        // },
+        grid: {
+            containLabel: true,
+            top: 'center',
+            height: 80 * countryNames.length,
+            left: 10,
+            right: 70
+        },
+        xAxis: {
+            max: maxData,
+            splitLine: {show: false},
+            offset: 10,
+            axisLine: {
+                lineStyle: {
+                    color: '#999'
+                }
+            },
+            axisLabel: {
+                margin: 10
+            }
+        },
+        yAxis: {
+            data: countryNames,
+            inverse: true,
+            axisLine: {show: false},
+            axisTick: {show: false},
+            axisLabel: {
+                margin: 10,
+                textStyle: {
+                    fontSize: 14
+                }
+            }
+        },
+        series: [
+            {
+                // current data
+                name: 'death',
+                type: 'pictorialBar',
+                symbol: spirit,
+                symbolOffset: [0, 18],
+                symbolRepeat: 'fixed',
+                symbolSize: ['20%', '40%'],
+                // symbolMargin: '5%',
+                symbolClip: true,
+                // symbolSize: 20,
+                symbolBoundingData: maxData,
+                data: death_rate,
+                markLine: {
+                    symbol: 'none',
+                    label: {
+                        formatter: 'max: {c}',
+                        position: 'start'
+                    },
+                    lineStyle: {
+                        color: 'red',
+                        type: 'dotted',
+                        opacity: 0.2,
+                        width: 2
+                    },
+                    data: [{
+                        type: 'max'
+                    }]
+                },
+                z: 10
+            }, {
+                // full data
+                type: 'pictorialBar',
+                itemStyle: {
+                    normal: {
+                        opacity: 0.2
+                    }
+                },
+                label: {
+                    show: true,
+                    formatter: function (params) {
+                        return (death_rate[params.dataIndex] * 100).toFixed(2) + ' %';
+                    },
+                    position: 'right',
+                    offset: [10, 18],
+                    color: 'red',
+                    fontSize: 14
+                },
+                animationDuration: 0,
+                symbolOffset: [0, 18],
+                symbolRepeat: 'fixed',
+                symbolSize: ['20%', '40%'],
+                // symbolMargin: '5%',
+                symbol: spirit,
+                // symbolSize: 20,
+                symbolBoundingData: maxData,
+                data: death_rate,
+                z: 5
+            },{
+                // current data
+                name: 'cured',
+                type: 'pictorialBar',
+                symbol: spirit,
+                symbolOffset: [0, -18],
+                symbolRepeat: 'fixed',
+                symbolSize: ['20%', '40%'],
+                // symbolMargin: '5%',
+                symbolClip: true,
+                // symbolSize: 20,
+                symbolBoundingData: maxData,
+                data: cured_rate,
+                markLine: {
+                    symbol: 'none',
+                    label: {
+                        formatter: 'max: {c}',
+                        position: 'start'
+                    },
+                    lineStyle: {
+                        color: 'green',
+                        type: 'dotted',
+                        opacity: 0.2,
+                        width: 2
+                    },
+                    data: [{
+                        type: 'max'
+                    }]
+                },
+                z: 10
+            }, {
+                // full data
+                type: 'pictorialBar',
+                itemStyle: {
+                    normal: {
+                        opacity: 0.2
+                    }
+                },
+                label: {
+                    show: true,
+                    formatter: function (params) {
+                        return (cured_rate[params.dataIndex] * 100).toFixed(2) + ' %';
+                    },
+                    position: 'right',
+                    offset: [10, -18],
+                    color: 'green',
+                    fontSize: 14
+                },
+                animationDuration: 0,
+                symbolOffset: [0, -18],
+                symbolRepeat: 'fixed',
+                symbolSize: ['20%', '40%'],
+                // symbolMargin: '5%',
+                symbol: spirit,
+                // symbolSize: 20,
+                symbolBoundingData: maxData,
+                data: cured_rate,
+                z: 5
+            }]
+    }
+}
+
 export {
     mapConfig,
     chartConfig,
     chartConfigLog,
     polarStackConfig,
+    polarStackConfigLog,
     mapDiscoveryConfig,
-    chartDiscoveryConfig
+    chartDiscoveryConfig,
+    pictorialBarConfig
 }

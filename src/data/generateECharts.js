@@ -1,8 +1,9 @@
 // Use data from JinRiTouTiao
 import ECharts from '../components/ECharts.vue'
 import {
-    mapConfig, chartConfig, chartConfigLog, polarStackConfig,
-    mapDiscoveryConfig, chartDiscoveryConfig
+    mapConfig, chartConfig, chartConfigLog,
+    mapDiscoveryConfig, chartDiscoveryConfig,
+    pictorialBarConfig
 } from './eChartsConfig';
 import worldMap from 'echarts/map/json/world.json'
 import data from './data.json'
@@ -95,41 +96,60 @@ function genChart(places, type) {
 }
 
 
-function genPolarStack(places, type) {
-    let confirmed = [];
-    let cured = [];
-    let death = [];
-    let confirmed_log = [];
-    let cured_log = [];
-    let death_log = [];
+// function genPolarStack(places, type) {
+    // let confirmed = [];
+    // let cured = [];
+    // let death = [];
+    // // let confirmed_log = [];
+    // // let cured_log = [];
+    // // let death_log = [];
+    //
+    // let psData = {
+    //     ps: null
+    // };
+    //
+    // for (let place of places) {
+    //     let code = getCode(place);
+    //     let temp = data.filter(e => e.countryCode === code && !e.province && e.date === today_date);
+    //     cured.push(temp[0].cured);
+    //     death.push(temp[0].dead);
+    //     confirmed.push(temp[0].confirmed);
+    //     // let t = temp[0].confirmed - cured.slice(-1) - death.slice(-1);
+    //     // confirmed.push(t); // 因为是剩下的 confirmed
+    //
+    //     // cured_log.push(getTenBaseLog(temp[0].cured).toFixed(2));
+    //     // death_log.push(getTenBaseLog(temp[0].dead).toFixed(2));
+    //     // confirmed_log.push(getTenBaseLog(t).toFixed(2));
+    // }
+    //
+    // if (type === 'log') {
+    //     // psData.ps = polarStackConfig(places, confirmed_log, cured_log, death_log);
+    //     psData.ps = polarStackConfigLog(places, confirmed, cured, death);
+    // } else {
+    //     psData.ps = polarStackConfig(places, confirmed, cured, death);
+    // }
+    //
+    // return psData.ps
+// }
 
-    let psData = {
-        ps: null
-    };
+function genPictorialBar(places) {
+    let cured_rate = [];
+    let death_rate = [];
 
     for (let place of places) {
         let code = getCode(place);
         let temp = data.filter(e => e.countryCode === code && !e.province && e.date === today_date);
-        cured.push(temp[0].cured);
-        death.push(temp[0].dead);
-        // confirmed.push(temp[0].confirmed);
-        let t = temp[0].confirmed - cured.slice(-1) - death.slice(-1);
-        confirmed.push(t); // 因为是剩下的 confirmed
-
-        cured_log.push(getTenBaseLog(temp[0].cured).toFixed(2));
-        death_log.push(getTenBaseLog(temp[0].dead).toFixed(2));
-        confirmed_log.push(getTenBaseLog(t).toFixed(2));
+        cured_rate.push((temp[0].cured / temp[0].confirmed).toFixed(4));
+        death_rate.push((temp[0].dead / temp[0].confirmed).toFixed(4))
     }
 
-    if (type === 'log') {
-        psData.ps = polarStackConfig(places, confirmed_log, cured_log, death_log);
-    } else {
-        psData.ps = polarStackConfig(places, confirmed, cured, death);
-    }
+    let pictorialBarData = {
+        option: null
+    };
 
-    return psData.ps
+    pictorialBarData.option = pictorialBarConfig(places, cured_rate, death_rate);
+    return pictorialBarData.option;
 }
-
 
 function genMapDiscovery() {
     // 首先要注册世界地图
@@ -209,13 +229,14 @@ function genMapDiscovery() {
     return mapDiscoveryData.option
 }
 
-function getTenBaseLog(x) {
-    return Math.log(x) / Math.log(10);
-}
+// function getTenBaseLog(x) {
+//     return Math.log(x) / Math.log(10);
+// }
 
 export {
     genMap,
     genChart,
-    genPolarStack,
+    // genPolarStack,
     genMapDiscovery,
+    genPictorialBar
 }

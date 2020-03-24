@@ -20,38 +20,9 @@
             width="400"
     >
       <div class="fill-height right_sidebar">
-        <p>
-          Choose countries in the map to generate charts.
-        </p>
-        <div style="width: 100%">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-btn dark v-on="on"
-                     style="position:center; margin-right: 15px"
-                     color='normal'
-                     @click='reset'
-              >
-                Reset
-              </v-btn>
-            </template>
-            <span>deselect all countries</span>
-          </v-tooltip>
-
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-btn dark v-on="on"
-                     style="position:center"
-                     color='normal'
-                     @click='log'
-              >
-                {{LOGbtntext}}
-              </v-btn>
-            </template>
-            <span>{{LOGbtntext === "unlog" ? "switch normal value" : "switch logarithm (10 based)"}}</span>
-          </v-tooltip>
-
-          <v-divider style="margin-top: 20px; margin-right: 30px; margin-left: 30px"/>
-        </div>
+<!--        <p>-->
+<!--          Choose countries in the map to generate charts.-->
+<!--        </p>-->
 
         <div class="my_echarts">
           <e-charts
@@ -61,26 +32,71 @@
                   autoresize
                   style="width: inherit; height: 320px"
           />
+          <div style="width: 100%; margin: 10px auto">
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn dark v-on="on"
+                       style="position:center; margin-right: 15px"
+                       color='normal'
+                       @click='reset'
+                >
+                  Reset
+                </v-btn>
+              </template>
+              <span>deselect all countries</span>
+            </v-tooltip>
+
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn dark v-on="on"
+                       style="position:center"
+                       color='normal'
+                       @click='log'
+                >
+                  {{LOGbtntext}}
+                </v-btn>
+              </template>
+              <span>{{LOGbtntext === "unlog" ? "switch normal value" : "switch logarithm (10 based)"}}</span>
+            </v-tooltip>
+
+<!--            <v-divider style="margin-top: 20px; margin-right: 30px; margin-left: 30px"/>-->
+          </div>
 
           <v-divider style="margin: 10px 30px"/>
 
+          <!--          <e-charts-->
+          <!--                  ref='polar stack'-->
+          <!--                  :options='polarstack'-->
+          <!--                  :initOptions='initOptions'-->
+          <!--                  autoresize-->
+          <!--                  style="width: inherit; height: 360px"-->
+          <!--          />-->
           <e-charts
-                  ref='polar stack'
-                  :options='polarstack'
+                  ref='pictorial bar'
+                  :options='pictorialBar'
                   :initOptions='initOptions'
                   autoresize
-                  style="width: inherit; height: 360px"
+                  style="width: inherit; min-height: 200px; max-height: 550px"
           />
         </div>
       </div>
     </v-navigation-drawer>
+
+    <v-snackbar
+            v-model="snackbar"
+            :timeout="timeout"
+            top
+            color="teal"
+    >
+      <div style="width: 100%; text-align: center">{{ text }}</div>
+    </v-snackbar>
   </figure>
 </template>
 
 <script>
     import ECharts from '../components/ECharts.vue'
-    import {genMap, genChart, genPolarStack} from '../data/generateECharts';
-    import macarons from 'echarts/theme/macarons' // 更改主题？还没实现
+    import {genMap, genChart, genPictorialBar} from '../data/generateECharts';
+    // import macarons from 'echarts/theme/macarons' // 更改主题？还没实现
 
     export default {
         components: {
@@ -97,15 +113,20 @@
             map: {},
             chart: {},
             polarstack: {},
+            pictorialBar: {},
             initOptions: {
                 renderer: 'canvas',
-                theme: macarons // 更改主题？
-            }
+                // theme: macarons // 更改主题？
+            },
+            snackbar: false,
+            text: 'You can only select 5 countries at most!',
+            timeout: 2000,
         }),
 
         mounted() {
             this.chart = genChart(this.places, this.chartType);
-            this.polarstack = genPolarStack(this.places, this.chartType);
+            // this.polarstack = genPolarStack(this.places, this.chartType);
+            this.pictorialBar = genPictorialBar(this.places);
         },
 
         methods: {
@@ -114,15 +135,22 @@
                 if (index > -1) {
                     this.places.splice(index, 1);
                 } else {
+                    // 最多选择5个国家进行比较
+                    if (this.places.length >= 5) {
+                        this.snackbar = true;
+                        return
+                    }
                     this.places.push(params.name);
                 }
                 this.chart = genChart(this.places, this.chartType);
-                this.polarstack = genPolarStack(this.places, this.chartType);
+                this.pictorialBar = genPictorialBar(this.places);
+                // this.polarstack = genPolarStack(this.places, this.chartType);
             },
             reset: function () {
                 this.places = [];
                 this.chart = genChart(this.places, this.chartType);
-                this.polarstack = genPolarStack(this.places, this.chartType);
+                this.pictorialBar = genPictorialBar(this.places);
+                // this.polarstack = genPolarStack(this.places, this.chartType);
             },
             log: function () {
                 if (this.chartType === 'value') {
@@ -133,7 +161,7 @@
                     this.LOGbtntext = 'log'
                 }
                 this.chart = genChart(this.places, this.chartType);
-                this.polarstack = genPolarStack(this.places, this.chartType);
+                // this.polarstack = genPolarStack(this.places, this.chartType);
             }
         },
 
@@ -158,7 +186,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     /*padding-bottom: 20px;*/
   }
 
@@ -174,7 +202,7 @@
     width: 100%;
     flex-grow: 1;
     overflow: scroll;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: -50px;
   }
 </style>
