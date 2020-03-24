@@ -20,9 +20,29 @@
             width="400"
     >
       <div class="fill-height right_sidebar">
-<!--        <p>-->
-<!--          Choose countries in the map to generate charts.-->
-<!--        </p>-->
+        <div class="sidebar_title">
+          <p>
+            Select countries in the map to generate charts.
+          </p>
+          <p>Click the button
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn v-on="on"
+                       style="position:center; margin: 0 4px"
+                       color='normal'
+                       @click='reset'
+                       small
+                       outlined
+                >
+                  Reset
+                </v-btn>
+              </template>
+              <span>deselect all countries</span>
+            </v-tooltip>
+            to reset the data.
+          </p>
+          <v-divider style="margin-top: 10px"/>
+        </div>
 
         <div class="my_echarts">
           <e-charts
@@ -33,33 +53,22 @@
                   style="width: inherit; height: 320px"
           />
           <div style="width: 100%; margin: 10px auto">
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on }">
-                <v-btn dark v-on="on"
-                       style="position:center; margin-right: 15px"
-                       color='normal'
-                       @click='reset'
-                >
-                  Reset
-                </v-btn>
-              </template>
-              <span>deselect all countries</span>
-            </v-tooltip>
 
             <v-tooltip bottom>
               <template v-slot:activator="{ on }">
-                <v-btn dark v-on="on"
+                <v-btn v-on="on"
                        style="position:center"
                        color='normal'
                        @click='log'
+                       small
+                       outlined
                 >
                   {{LOGbtntext}}
                 </v-btn>
               </template>
-              <span>{{LOGbtntext === "unlog" ? "switch normal value" : "switch logarithm (10 based)"}}</span>
+              <span>{{LOGbtntext === "unlog" ? "switch to normal value" : "switch to logarithm (10 based)"}}</span>
             </v-tooltip>
 
-<!--            <v-divider style="margin-top: 20px; margin-right: 30px; margin-left: 30px"/>-->
           </div>
 
           <v-divider style="margin: 10px 30px"/>
@@ -72,11 +81,12 @@
           <!--                  style="width: inherit; height: 360px"-->
           <!--          />-->
           <e-charts
+                  id="pictorial_bar"
                   ref='pictorial bar'
                   :options='pictorialBar'
                   :initOptions='initOptions'
                   autoresize
-                  style="width: inherit; min-height: 200px; max-height: 550px"
+                  style="width: inherit; height: 320px"
           />
         </div>
       </div>
@@ -141,6 +151,7 @@
                         return
                     }
                     this.places.push(params.name);
+                    document.getElementById("pictorial_bar").style.height = 160 + this.places.length * 80 + 'px';
                 }
                 this.chart = genChart(this.places, this.chartType);
                 this.pictorialBar = genPictorialBar(this.places);
@@ -190,6 +201,10 @@
     /*padding-bottom: 20px;*/
   }
 
+  .sidebar_title {
+    margin-top: 20px;
+  }
+
   .map_chart {
     width: 100%;
     display: flex;
@@ -202,7 +217,7 @@
     width: 100%;
     flex-grow: 1;
     overflow: scroll;
-    padding-top: 20px;
+    padding-top: 10px;
     margin-bottom: -50px;
   }
 </style>

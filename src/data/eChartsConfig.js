@@ -693,7 +693,7 @@ function pictorialBarConfig(countryNames, cured_rate, death_rate) {
                 label: {
                     show: true,
                     formatter: function (params) {
-                        return (death_rate[params.dataIndex] * 100).toFixed(2) + ' %';
+                        return (death_rate[params.dataIndex] * 100).toFixed(2) + '%';
                     },
                     position: 'right',
                     offset: [10, 18],
@@ -751,7 +751,7 @@ function pictorialBarConfig(countryNames, cured_rate, death_rate) {
                 label: {
                     show: true,
                     formatter: function (params) {
-                        return (cured_rate[params.dataIndex] * 100).toFixed(2) + ' %';
+                        return (cured_rate[params.dataIndex] * 100).toFixed(2) + '%';
                     },
                     position: 'right',
                     offset: [10, -18],
