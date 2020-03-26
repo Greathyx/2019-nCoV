@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   schedule:
-    - cron: '*/20 * * * *' # 每天斯德哥尔摩时间 23:50 更新 '50 22 * * *'
+    - cron: '*/60 * * * *' # 每小时更新一次
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,8 +23,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: clean
       run: rm "./src/data/data.json"
-    - name: new file
-      run: touch "./src/data/data.json"
     - name: Run a one-line script
       run: curl -o "./src/data/data.json" "https://raw.githubusercontent.com/canghailan/Wuhan-2019-nCoV/master/Wuhan-2019-nCoV.json"
     - name: commit
