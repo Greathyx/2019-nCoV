@@ -23,6 +23,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: clean
       run: rm "./src/data/data.json"
+    - name: new file
+      run: touch "./src/data/data.json"
     - name: Run a one-line script
       run: curl "https://raw.githubusercontent.com/canghailan/Wuhan-2019-nCoV/master/Wuhan-2019-nCoV.json" >> "./src/data/data.json"
     - name: commit
