@@ -27,11 +27,32 @@
       </p>
 
       <h4 style="width: 100%; text-align: center">Figure1: r2=70</h4>
-      <v-img :src="require('../assets/70.jpg')" style="margin-bottom: 20px"></v-img>
+      <!--      <v-img :src="require('../assets/70.jpg')" style="margin-bottom: 20px"></v-img>-->
+      <e-charts
+              ref='line'
+              :options='options1'
+              :init-options='initOptions'
+              autoresize
+              style="width: 100%; height: 400px; margin-bottom: 20px"
+      />
       <h4 style="width: 100%; text-align: center">Figure2: r2=8</h4>
-      <v-img :src="require('../assets/8.jpg')" style="margin-bottom: 20px"></v-img>
+      <!--      <v-img :src="require('../assets/8.jpg')" style="margin-bottom: 20px"></v-img>-->
+      <e-charts
+              ref='line'
+              :options='options2'
+              :init-options='initOptions'
+              autoresize
+              style="width: 100%; height: 400px; margin-bottom: 20px"
+      />
       <h4 style="width: 100%; text-align: center">Figure3: r2=20</h4>
-      <v-img :src="require('../assets/20.jpg')"></v-img>
+      <!--      <v-img :src="require('../assets/20.jpg')"></v-img>-->
+      <e-charts
+              ref='line'
+              :options='options3'
+              :init-options='initOptions'
+              autoresize
+              style="width: 100%; height: 400px;"
+      />
 
       <h2>Reference</h2>
       <p>
@@ -52,7 +73,28 @@
 </template>
 
 <script>
+    import ECharts from '../components/ECharts.vue'
+    import {generateFutureLine} from "../data/generateECharts";
+
     export default {
         name: 'Future',
+        components: {
+            ECharts,
+        },
+
+        data: () => ({
+            options1: {},
+            options2: {},
+            options3: {},
+            initOptions: {
+                renderer: 'canvas',
+            }
+        }),
+
+        mounted() {
+            this.options1 = generateFutureLine(70);
+            this.options2 = generateFutureLine(8);
+            this.options3 = generateFutureLine(20);
+        },
     };
 </script>

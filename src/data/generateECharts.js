@@ -3,7 +3,7 @@ import ECharts from '../components/ECharts.vue'
 import {
     mapConfig, chartConfig, chartConfigLog,
     mapDiscoveryConfig, chartDiscoveryConfig,
-    pictorialBarConfig
+    pictorialBarConfig, futureLineConfig
 } from './eChartsConfig';
 import worldMap from 'echarts/map/json/world.json'
 import data from './data.json'
@@ -168,7 +168,10 @@ function genMapDiscovery() {
         countries.push(getName(code))
     }
 
-    let days = ['01-20', '01-27', '02-03', '02-10', '02-17', '02-24', '03-02', '03-09', '03-16', '03-23', '03-30', '04-06'];
+    let days = ['01-20', '01-27', '02-03', '02-10', '02-17', '02-24',
+        '03-02', '03-09', '03-16', '03-23', '03-30',
+        '04-06', '04-13', '04-20', '04-27',
+        '05-04', '05-11', '05-18', '05-25'];
 
     const dataset = [];
 
@@ -236,6 +239,15 @@ function genMapDiscovery() {
     return mapDiscoveryData.option
 }
 
+function generateFutureLine(r2) {
+    let futureLineData = {
+        option: null
+    };
+
+    futureLineData.option = futureLineConfig(r2);
+    return futureLineData.option;
+}
+
 // function getTenBaseLog(x) {
 //     return Math.log(x) / Math.log(10);
 // }
@@ -245,5 +257,6 @@ export {
     genChart,
     // genPolarStack,
     genMapDiscovery,
-    genPictorialBar
+    genPictorialBar,
+    generateFutureLine
 }

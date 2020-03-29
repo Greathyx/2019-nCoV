@@ -20,7 +20,7 @@
         </div>
         <div class="countries">
           <h5 style="margin: 10px auto">Confirmed Cases by Country</h5>
-          <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 0 25px">
+          <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 0 22px">
             <p v-for="item in confirmed_data" v-bind:key="item.name">
               <span style="color: #F44336; font-weight: bold">{{item.value}}</span> {{item.name}}
             </p>

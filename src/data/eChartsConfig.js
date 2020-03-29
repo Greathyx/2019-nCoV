@@ -589,17 +589,13 @@ function pictorialBarConfig(countryNames, cured_rate, death_rate) {
     let max_rate = Math.max(Math.max(...cured_rate), Math.max(...death_rate));
     if (max_rate >= 0 && max_rate < 0.01) {
         maxData = 0.01;
-    }
-    else if (max_rate >= 0.01 && max_rate < 0.05) {
+    } else if (max_rate >= 0.01 && max_rate < 0.05) {
         maxData = 0.05;
-    }
-    else if (max_rate >= 0.05 && max_rate < 0.1) {
+    } else if (max_rate >= 0.05 && max_rate < 0.1) {
         maxData = 0.1;
-    }
-    else if (max_rate >= 0.1 && max_rate < 0.5) {
+    } else if (max_rate >= 0.1 && max_rate < 0.5) {
         maxData = 0.5;
-    }
-    else {
+    } else {
         maxData = 1;
     }
 
@@ -710,7 +706,7 @@ function pictorialBarConfig(countryNames, cured_rate, death_rate) {
                 symbolBoundingData: maxData,
                 data: death_rate,
                 z: 5
-            },{
+            }, {
                 // current data
                 name: 'cured',
                 type: 'pictorialBar',
@@ -772,6 +768,67 @@ function pictorialBarConfig(countryNames, cured_rate, death_rate) {
     }
 }
 
+function futureLineConfig(r2) {
+    const N = 1400000000;      //%人口总数
+    const E = 0;          //%潜伏者
+    const I = 1;          //%传染者
+    const S = N - I;      //%易感者
+    const R = 0;          //%康复者
+
+    const r = 2;         //%感染者接触易感者的人数
+    const B = 0.1;       //%传染概率
+    const a = 0.6;        //%潜伏者转化为感染者概率
+    // const r2 = 20;        //%潜伏者接触易感者的人数
+    const B2 = 0.03;      //%潜伏者传染正常人的概率
+    const y = 0.1;        //%康复概率
+    // const k = 0.025373;     //%死亡
+    let Sa = [];
+    let Ea = [];
+    let Ia = [];
+    let Ra = [];
+    Sa.push(S);
+    Ea.push(E);
+    Ia.push(I);
+    Ra.push(R);
+    let index = [];
+    index.push(0 + "");
+    for (let idx = 0; idx < 140; idx++) {
+        index.push((idx + 1) + "");
+        Sa.push(Sa[idx] - r * B * Sa[idx] * Ia[idx] / N - r2 * B2 * Sa[idx] * Ea[idx] / N);
+        Ea.push(Ea[idx] + r * B * Sa[idx] * Ia[idx] / N - a * Ea[idx] + r2 * B2 * Sa[idx] * Ea[idx] / N);
+        Ia.push(Ia[idx] + a * Ea[idx] - y * Ia[idx]);
+        Ra.push(Ra[idx] + y * Ia[idx]);
+    }
+
+    return {
+        legend: {
+            show: true
+        },
+        tooltip: {
+            trigger: 'axis',
+            // showContent: false
+        },
+        dataset: {
+            source: [
+                ['product', ...index],
+                ['Suspectible', ...Sa],
+                ['Exposed', ...Ea],
+                ['Infected', ...Ia],
+                ['Recovered', ...Ra]
+            ]
+        },
+        xAxis: {type: 'category'},
+        yAxis: {gridIndex: 0},
+        grid: {top: '10%'},
+        series: [
+            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+        ]
+    }
+}
+
 export {
     mapConfig,
     chartConfig,
@@ -780,5 +837,6 @@ export {
     polarStackConfigLog,
     mapDiscoveryConfig,
     chartDiscoveryConfig,
-    pictorialBarConfig
+    pictorialBarConfig,
+    futureLineConfig
 }
