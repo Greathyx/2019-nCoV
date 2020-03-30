@@ -769,7 +769,7 @@ function pictorialBarConfig(countryNames, cured_rate, death_rate) {
 }
 
 function futureLineConfig(r2) {
-    const N = 1400000000;      //%人口总数
+    const N = 100000;      //%人口总数
     const E = 0;          //%潜伏者
     const I = 1;          //%传染者
     const S = N - I;      //%易感者

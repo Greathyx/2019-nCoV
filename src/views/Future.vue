@@ -27,7 +27,6 @@
       </p>
 
       <h4 style="width: 100%; text-align: center">Figure1: r2=70</h4>
-      <!--      <v-img :src="require('../assets/70.jpg')" style="margin-bottom: 20px"></v-img>-->
       <e-charts
               ref='line'
               :options='options1'
@@ -36,7 +35,6 @@
               style="width: 100%; height: 400px; margin-bottom: 20px"
       />
       <h4 style="width: 100%; text-align: center">Figure2: r2=8</h4>
-      <!--      <v-img :src="require('../assets/8.jpg')" style="margin-bottom: 20px"></v-img>-->
       <e-charts
               ref='line'
               :options='options2'
@@ -45,7 +43,6 @@
               style="width: 100%; height: 400px; margin-bottom: 20px"
       />
       <h4 style="width: 100%; text-align: center">Figure3: r2=20</h4>
-      <!--      <v-img :src="require('../assets/20.jpg')"></v-img>-->
       <e-charts
               ref='line'
               :options='options3'
