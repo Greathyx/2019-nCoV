@@ -22,8 +22,8 @@
 
     <div class="video">
       <h3 class="display-1 font-weight-medium" style="color: white">Introduction Video</h3>
-      <iframe width="600" height="360"
-              src="https://www.youtube.com/embed/5iA-0nn8qAM" frameborder="0"
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/0D8bK28ld5U" frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               style="margin-top: 20px"
               allowfullscreen

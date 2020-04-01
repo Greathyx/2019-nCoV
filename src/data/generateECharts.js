@@ -12,18 +12,19 @@ import {getName, CODE, getCode} from './name'
 
 // generate date of today
 const today = new Date();
-const dd = String(today.getDate()).padStart(2, '0');
-const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
+// const dd = String(today.getDate()).padStart(2, '0');
+// const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
 const yyyy = today.getFullYear();
 // const today_date = yyyy + '-' + mm + '-' + dd;
+const today_date = '2020-04-01';
 
 // 在北京时间 12 点前用前一天的数据替代当天数据
 // 大概还有更好的写法吧比如比较 data.json 的 md5 ……
-if(today.getHours()<5){
-    var today_date=yyyy+'-'+mm+'-'+(dd-1)
-}else{
-    today_date = yyyy + '-' + mm + '-' + dd;
-}
+// if(today.getHours()<5){
+//     var today_date=yyyy+'-'+mm+'-'+(dd-1)
+// }else{
+//     today_date = yyyy + '-' + mm + '-' + dd;
+// }
 
 function genMap() {
     const result = [];
