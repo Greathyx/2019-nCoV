@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   schedule:
-    - cron: '*/60 * * * *' # 每小时更新一次
+    - cron: '0 0-15 * * *' # UTC+0 0点到15点 每小时更新一次
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
