@@ -13,14 +13,14 @@
           <router-link to="/" class="link">Home</router-link>
         </v-tab>
         <v-tab>
-          <router-link to="/discovery_process" class="link">Discovery Process</router-link>
+          <router-link to="/discovery_process" class="link">Evolution Process</router-link>
         </v-tab>
-        <v-tab>
-          <router-link to="/news" class="link">News</router-link>
-        </v-tab>
-        <v-tab>
-          <router-link to="/future" class="link">Future</router-link>
-        </v-tab>
+        <!--<v-tab>-->
+          <!--<router-link to="/news" class="link">News</router-link>-->
+        <!--</v-tab>-->
+        <!--<v-tab>-->
+          <!--<router-link to="/future" class="link">Future</router-link>-->
+        <!--</v-tab>-->
         <v-tab>
           <router-link to="/about" class="link">About</router-link>
         </v-tab>

@@ -43,12 +43,12 @@
     import {getName, CODE} from '../data/name'
 
     // generate date of today
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
-    const yyyy = today.getFullYear();
-    const today_date = yyyy + '-' + mm + '-' + dd;
-    // const today_date = '2020-04-01';
+//    const today = new Date();
+//    const dd = String(today.getDate()).padStart(2, '0');
+//    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0
+//    const yyyy = today.getFullYear();
+//    const today_date = yyyy + '-' + mm + '-' + dd;
+     const today_date = '2020-08-26';
 
     // 在北京时间 12 点前用前一天的数据替代当天数据
     // 大概还有更好的写法吧比如比较 data.json 的 md5 ……

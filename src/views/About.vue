@@ -20,15 +20,15 @@
       </v-row>
     </v-parallax>
 
-    <div class="video">
-      <h3 class="display-1 font-weight-medium" style="color: white">Introduction Video</h3>
-      <iframe width="560" height="315"
-              src="https://www.youtube.com/embed/0D8bK28ld5U" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              style="margin-top: 20px"
-              allowfullscreen
-      ></iframe>
-    </div>
+    <!--<div class="video">-->
+      <!--<h3 class="display-1 font-weight-medium" style="color: white">Introduction Video</h3>-->
+      <!--<iframe width="560" height="315"-->
+              <!--src="https://www.youtube.com/embed/0D8bK28ld5U" frameborder="0"-->
+              <!--allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+              <!--style="margin-top: 20px"-->
+              <!--allowfullscreen-->
+      <!--&gt;</iframe>-->
+    <!--</div>-->
 
     <div style="margin: 0 60px">
       <div class="background">
@@ -58,14 +58,14 @@
         <div class="left2">
           <h1 style="margin-bottom: 5px">
             Our Project
-            <a href="/"
-               class="v-markdown--link v-markdown--external"
-               style="text-decoration: none; color: teal"
-            >
-              <i class="v-icon mdi mdi-open-in-new"
-                 style="font-size: 20px; vertical-align: baseline;"
-              ></i>
-            </a>
+            <!--<a href="/"-->
+               <!--class="v-markdown&#45;&#45;link v-markdown&#45;&#45;external"-->
+               <!--style="text-decoration: none; color: teal"-->
+            <!--&gt;-->
+              <!--<i class="v-icon mdi mdi-open-in-new"-->
+                 <!--style="font-size: 20px; vertical-align: baseline;"-->
+              <!--&gt;</i>-->
+            <!--</a>-->
           </h1>
           <p class="text-justify">
             1. By visualizing the current data of the new coronavirus break, we want to discuss
@@ -75,15 +75,15 @@
             2. We built a dynamic map with a timeline to demonstrate how situation got more and
             more severe in the last several months.
           </p>
-          <p style="margin-top: -6px" class="text-justify">
-            3. We collected news data about the
-            coronavirus epidemic to keep users informed of the up-to-date information
-            and to raise discussions about different actions to control the epidemic.
-          </p>
-          <p style="margin-top: -6px" class="text-justify">
-            4. Via researching the epidemic model named SEIR, we hope to make people awared
-            that it is crucial to take preventions like wearing masks.
-          </p>
+          <!--<p style="margin-top: -6px" class="text-justify">-->
+            <!--3. We collected news data about the-->
+            <!--coronavirus epidemic to keep users informed of the up-to-date information-->
+            <!--and to raise discussions about different actions to control the epidemic.-->
+          <!--</p>-->
+          <!--<p style="margin-top: -6px" class="text-justify">-->
+            <!--4. Via researching the epidemic model named SEIR, we hope to make people awared-->
+            <!--that it is crucial to take preventions like wearing masks.-->
+          <!--</p>-->
           <p style="margin-top: -6px" class="text-justify">
             * Data Source:
             <a target="_blank" style="color: teal"
@@ -132,14 +132,14 @@
                     width="700" height="440"
                     :src="require('../assets/about1.png')"
             ></v-carousel-item>
-            <v-carousel-item
-                    width="700" height="440"
-                    :src="require('../assets/about2.png')"
-            ></v-carousel-item>
-            <v-carousel-item
-                    width="700" height="440"
-                    :src="require('../assets/about3.png')"
-            ></v-carousel-item>
+            <!--<v-carousel-item-->
+                    <!--width="700" height="440"-->
+                    <!--:src="require('../assets/about2.png')"-->
+            <!--&gt;</v-carousel-item>-->
+            <!--<v-carousel-item-->
+                    <!--width="700" height="440"-->
+                    <!--:src="require('../assets/about3.png')"-->
+            <!--&gt;</v-carousel-item>-->
           </v-carousel>
         </div>
       </div>
@@ -173,8 +173,8 @@
 
       <div class="members_intro">
         <h1 style="margin-bottom: 5px">Our Team</h1>
-        <v-row>
-          <v-col cols="4">
+        <v-row style="width: 100%">
+          <v-col cols="6">
             <v-card class="mx-auto" max-width="300" height="400px">
               <v-img
                       :src="require('../assets/yuxuanh.jpg')"
@@ -187,42 +187,42 @@
                 • front-end programming<br/>
                 • deploy the website<br/>
                 • design visual structures<br/>
-                • make presentation ppts<br/>
               </v-card-subtitle>
             </v-card>
           </v-col>
 
-          <v-col cols="4">
+          <v-col cols="6">
             <v-card class="mx-auto" max-width="300" height="400px">
               <v-img
                       :src="require('../assets/jiamengb.jpg')"
                       height="200px"
               ></v-img>
-              <v-card-title>Jiameng Bian</v-card-title>
+              <v-card-title>
+                Jiameng Bian
+              </v-card-title>
               <v-card-subtitle>
                 • crawl data and cook data<br/>
                 • front-end programming<br/>
                 • design visual structures<br/>
-                • make presentation ppts<br/>
               </v-card-subtitle>
             </v-card>
           </v-col>
 
-          <v-col cols="4">
-            <v-card class="mx-auto" max-width="300" height="400px">
-              <v-img
-                      :src="require('../assets/chenhaol.jpg')"
-                      height="200px"
-              ></v-img>
-              <v-card-title>Chenhao Li</v-card-title>
-              <v-card-subtitle>
-                • collect news data<br/>
-                • research the SEIR theory and build it<br/>
-                • carry out evaluation tests<br/>
-                • make the demo video<br/>
-              </v-card-subtitle>
-            </v-card>
-          </v-col>
+          <!--<v-col cols="4">-->
+            <!--<v-card class="mx-auto" max-width="300" height="400px">-->
+              <!--<v-img-->
+                      <!--:src="require('../assets/chenhaol.jpg')"-->
+                      <!--height="200px"-->
+              <!--&gt;</v-img>-->
+              <!--<v-card-title>Chenhao Li</v-card-title>-->
+              <!--<v-card-subtitle>-->
+                <!--• collect news data<br/>-->
+                <!--• research the SEIR theory and build it<br/>-->
+                <!--• carry out evaluation tests<br/>-->
+                <!--• make the demo video<br/>-->
+              <!--</v-card-subtitle>-->
+            <!--</v-card>-->
+          <!--</v-col>-->
         </v-row>
       </div>
     </div>

@@ -26,16 +26,16 @@ function mapConfig(data) {
                     '#ff8c71',
                     '#ef1717',
                     '#9c0505',
-                    '#800000'
+                    '#600000'
                 ]
             },
             pieces: [
-                {min: 10000},
+                {min: 100000},
+                {min: 50000, max: 100000},
+                {min: 10000, max: 50000},
                 {min: 1000, max: 10000},
-                {min: 500, max: 1000},
-                {min: 100, max: 500},
-                {min: 10, max: 100},
-                {max: 10}
+                {min: 100, max: 1000},
+                {max: 100}
             ],
             orient: 'vertical'
         }],
