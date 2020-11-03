@@ -1,4 +1,5 @@
 # 2019-ncov
+The project is running at [https://ncov-tracking.herokuapp.com/](https://ncov-tracking.herokuapp.com/).
 
 ## Project setup
 ```
